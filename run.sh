@@ -1,7 +1,10 @@
 #!/bin/sh
 
 # make flask find api application
-export FLASK_APP=api.py
+export FLASK_APP=./apimod/index.py
 
-#run flask
-flask run
+# activate the pipenv
+source $(pipenv --venv)/bin/activate
+
+# run flask listening on all interfaces
+flask run -h 0.0.0.0
