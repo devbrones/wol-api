@@ -3,11 +3,11 @@ import os
 
 app = Flask(__name__)
 
-if os.path.isfile("../error-reports"):
+if os.path.isfile("/home/rex/projects/wol-api/error-reports"):
     print("Log | N | file error-reports exists")
 else:
     print("Log | N | file error-reports does not exist, creating")
-    os.mknod('../error-reports')
+    os.mknod('/home/rex/projects/wol-api/error-reports')
 
 @app.route("/")
 def ret_ok():
@@ -18,7 +18,7 @@ def isonline():
 
 @app.route("/report-error", methods=['POST'])
 def error_report():
-    with open("../error-reports", "a") as errep:
+    with open("/home/rex/projects/wol-api/error-reports", "a") as errep:
         errep.write(str(request.get_json()))
         return '', 204
 
