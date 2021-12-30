@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # make flask find api application
 export FLASK_APP=./apimod/index.py

@@ -1,8 +1,23 @@
-from flask import Flask
+from flask import Flask, jsonify, request
+import os.path
 
 app = Flask(__name__)
 
+if os.path.isfile("../error-reports"):
+    print("Log | N | file error-reports exists")
+else:
+    print("Log | N | file error-reports does not exist, creating")
+
 @app.route("/")
-def hello_world():
-    return "Hello, World!"
+def ret_ok():
+    return "ok!200!\n<p>The API is active</p>"
+@app.route("/is-online")
+def isonline():
+    return "[{"online":"true"}]"
+
+@app.route("/report-error", methods=['POST'])
+def error_report():
+    with open("../error-reports", "a") as errep:
+        errep.write(request.get_json())
+        return '', 204
 
