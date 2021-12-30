@@ -1,17 +1,35 @@
 from flask import Flask, jsonify, request
 import os
+import config
+import psycopg2
 
+# jumbo
 app = Flask(__name__)
 
+# check if the error report file exists and create it otherwise
 if os.path.isfile("/home/rex/projects/wol-api/error-reports"):
     print("Log | N | file error-reports exists")
 else:
     print("Log | N | file error-reports does not exist, creating")
     os.mknod('/home/rex/projects/wol-api/error-reports')
 
+# connect to the database
+con = psycopg2.connect(user=postgun,
+                        password=postgpw,
+                        host="127.0.0.1",
+                        port="5432",
+                        database=postdbname)
+# create a cursor
+cursor = con.cursor()
+# print details of pgsql into log
+print("PostgreSQL server details")
+print(con.get_dsn_parameters(), "\n")
+
+
+
 @app.route("/api/")
 def ret_ok():
-    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0.9 by Devbrones https://tibroness.org</p>"
+    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0.10 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
@@ -38,4 +56,10 @@ def getlurl():
     #   'lbry-title':'pickle rick funny '
     #   }
     # ]
+
+    # select the url table
+    cursor.execute("SELECT url();")
+    # fetch result
+
+
     return request.args.get('url')
