@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import os
-from config import *
+from apcnf import *
 import psycopg2
 
 # jumbo
@@ -37,7 +37,8 @@ def ret_ok():
 
 @app.route("/api/is-online")
 def isonline():
-    return """[{"online":"true"}]"""
+    online = {"online":True}
+    return jsonify(online)
 
 @app.route("/api/report-error", methods=['POST'])
 def error_report():
@@ -67,3 +68,5 @@ def getlurl():
 
 
     return request.args.get('url')
+if __name__ == "__main__":
+    app.run()
