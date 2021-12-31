@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 import os
 import config
-import psycopg
+import psycopg2
 
 # jumbo
 app = Flask(__name__)
@@ -14,7 +14,7 @@ else:
     os.mknod('/home/rex/projects/wol-api/error-reports')
 
 # connect to the database
-con = psycopg.connect(user=postgun,
+con = psycopg2.connect(user=postgun,
                         password=postgpw,
                         host="127.0.0.1",
                         port="5432",
