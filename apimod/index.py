@@ -5,7 +5,6 @@ import psycopg2
 import json
 import collections
 
-
 # jumbo
 app = Flask(__name__)
 
