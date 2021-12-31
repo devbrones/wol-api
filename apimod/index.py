@@ -33,7 +33,7 @@ print(con.get_dsn_parameters(), "\n")
 
 @app.route("/api/")
 def ret_ok():
-    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0+c17 by Devbrones https://tibroness.org</p>"
+    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0+c20 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
@@ -64,17 +64,17 @@ def getlurl():
 
     # check if the url consists only of integers, and if so append ''
 
-    if isinstance(request.args.get('url'), int):
-        urla = "'" + request.args.get('url')  + "'"
-    else:
-        urla = request.args.get('url')
-    print(urla)
+    urla = str("yt_" + request.args.get('url'))
 
     # select the url table
     try:
-        cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
-        cursor.execute(str("SELECT * FROM " + str(urla)))
-        print(str("SELECT * FROM " + str(urla)))
+        if bool(cursor.execute("select * from information_schema.tables where table_name=%s", (urla,))):
+            cursor.execute(str("SELECT * FROM " + str(urla)))
+            print(str("SELECT * FROM " + str(urla)))
+        else:
+            cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
+            cursor.execute(str("SELECT * FROM " + str(urla)))
+            print(str("SELECT * FROM " + str(urla)))
     except:
         print("Log | N | last call could not be completed, cleaning up.")
         cursor.rollback()
