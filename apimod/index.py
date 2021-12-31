@@ -33,7 +33,7 @@ print(con.get_dsn_parameters(), "\n")
 
 @app.route("/api/")
 def ret_ok():
-    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0.10 by Devbrones https://tibroness.org</p>"
+    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0+c15 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
