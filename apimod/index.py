@@ -63,10 +63,10 @@ def getlurl():
     # ]
 
     # select the url table
-    cursor.execute("SELECT url();")
+    cursor.execute("CREATE TABLE ", str(request.args.get('url')),"(yt-title text, lbry-url text, lbry-title text);")
+    cursor.execute("SELECT * FROM", str(request.args.get('url')))
     # fetch result
 
-
-    return request.args.get('url')
+    return cursor.fetchone()
 if __name__ == "__main__":
     app.run()
