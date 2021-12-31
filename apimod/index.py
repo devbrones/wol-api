@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 import os
-import config
+from config import *
 import psycopg2
 
 # jumbo
@@ -13,12 +13,16 @@ else:
     print("Log | N | file error-reports does not exist, creating")
     os.mknod('/home/rex/projects/wol-api/error-reports')
 
+#debug
+print(Config().postgun)
+#/&debug
+
 # connect to the database
-con = psycopg2.connect(user=postgun,
-                        password=postgpw,
-                        host="127.0.0.1",
-                        port="5432",
-                        database=postdbname)
+con = psycopg2.connect(user=Config().postgun,
+                       password=Config().postgpw,
+                       host="127.0.0.1",
+                       port="5432",
+                       database=Config().postdbname)
 # create a cursor
 cursor = con.cursor()
 # print details of pgsql into log
