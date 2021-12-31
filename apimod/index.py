@@ -62,11 +62,31 @@ def getlurl():
     #   }
     # ]
 
+    # check if the url consists only of integers, and if so append ''
+
+    if isinstance(request.args.get('url'), int):
+        urla = "'" + request.args.get('url')  + "'"
+    else:
+        urla = request.args.get('url')
+    print(urla)
+
     # select the url table
-    cursor.execute(str("CREATE TABLE ", str(request.args.get('url')),"(yt-title text, lbry-url text, lbry-title text);"))
-    cursor.execute(str("SELECT * FROM", str(request.args.get('url')))
+    try:
+        cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
+        cursor.execute(str("SELECT * FROM " + str(urla)))
+        print(str("SELECT * FROM " + str(urla)))
+    except:
+        print("Log | N | last call could not be completed, cleaning up.")
+        cursor.rollback()
+
     # fetch result
 
-    return str(cursor.fetchone())
+    record = cursor.fetchone()
+    print(record)
+    if record == None:
+        record = "Null"
+    # cursor.close()
+    return_object = {'s':True, 'arg':urla, 'val':record}
+    return jsonify(return_object)
 if __name__ == "__main__":
     app.run()
