@@ -2,6 +2,9 @@ from flask import Flask, jsonify, request
 import os
 from apcnf import *
 import psycopg2
+import json
+import collections
+
 
 # jumbo
 app = Flask(__name__)
@@ -66,29 +69,79 @@ def getlurl():
 
     urla = str("yt_" + request.args.get('url'))
 
-    # select the url table
-    try:
-        if bool(cursor.execute("select * from information_schema.tables where table_name=%s", (urla,))):
-            cursor.execute(str("SELECT * FROM " + str(urla)))
-            con.commit()
-            print(str("SELECT * FROM " + str(urla)))
-        else:
-            cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
-            con.commit()
-            cursor.execute(str("SELECT * FROM " + str(urla)))
-            print(str("SELECT * FROM " + str(urla)))
-    except psycopg2.DatabaseError as error:
-        print("Log | N | last call could not be completed, cleaning up. %s",(error,))
-        con.rollback()
+    # check if the search request exists in the database and if so return a jsonified structure
+    # of the data.
+    # else create the table and scan lbrys api and add to resp cols.
 
-    # fetch result
+    cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (urla,))
 
-    record = cursor.fetchone()
-    print(record)
-    if record == None:
-        record = "Null"
-    # cursor.close()
-    return_object = {'s':True, 'arg':urla, 'val':record}
-    return jsonify(return_object)
+    if bool(cursor.fetchone()[0]):
+        # if the search request exists in the database, select it and return the values as
+        # a json dictionary
+
+        cursor.execute(str("SELECT * FROM " + str(urla)))
+        rows = cursor.fetchall()
+        rowarr = []
+        for row in rows:
+            d = collections.OrderedDict()
+            d['yttitle'] = row[0]
+            d['lbryurl'] = row[1]
+            d['lbrytitle'] = row[2]
+            rowarr.append(d)
+        return jsonify(rowarr)
+
+    else:
+
+       # else create a table with the name urla (ex. yt_dQw4w9WgXcQ) and append proper values
+       # that we get from lbry api
+
+        try:
+            cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (urla,))
+
+            if bool(cursor.fetchone()[0]):
+                # select the url table
+                cursor.execute(str("SELECT * FROM " + str(urla)))
+                con.commit()
+                print(str("SELECT * FROM " + str(urla)))
+            else:
+                cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
+                con.commit()
+                # select the url table
+                cursor.execute(str("SELECT * FROM " + str(urla)))
+                print(str("SELECT * FROM " + str(urla)))
+
+                # the following is the response format from the odysee api
+                # (https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL)
+
+                #{
+                #  "sucess": true,
+                #  "error": null,
+                #  "data": {
+                #    "videos": {
+                #      "YOUTUBEURL": "LBRYURL"
+                #    {,
+                #    "channels":null
+                #  }
+                #}
+
+                # we now need to feed these values into their respective columns which for
+                # us would be lbryurl and potentially lbrytitle
+                # the other values will be fetched using some movie magic i guess!
+
+
+
+        except psycopg2.DatabaseError as error:
+            print("Log | N | last call could not be completed, cleaning up. %s",(error,))
+            con.rollback()
+
+        # fetch result
+
+        record = cursor.fetchone()
+        print(record)
+        if record == None:
+            record = "Null"
+        # cursor.close()
+        return_object = {'yttitle':ytt, 'lbryurl':urlb, 'lbrytitle':lbt}
+        return jsonify(return_object)
 if __name__ == "__main__":
     app.run()
