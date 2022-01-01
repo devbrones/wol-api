@@ -76,7 +76,7 @@ def getlurl():
 
     # THIS CODE NEEDS TO BE CHANGED, NOW IT CREATES TABLES NOT ENTRIES!!!!!!
 
-    cursor.execute("select exists(select * from information_schema.tables where table_name=dataof_all)")
+    cursor.execute("select exists(select * from information_schema.tables where table_name='dataof_all')")
 
     if bool(cursor.fetchone()[0]):
         # if the table dataof_all exists then check if entry for urla exists, if so return
