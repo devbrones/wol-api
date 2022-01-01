@@ -81,7 +81,7 @@ def getlurl():
     if bool(cursor.fetchone()[0]):
         # if the table dataof_all exists then check if entry for urla exists, if so return
         # a json dictionary of said entry
-        cursor.execute("select col1, col2, col3, col4, col5, col6 from dataof_all WHERE yturl = %s;", (urla,))
+        cursor.execute("select id, yturl, yttitle, lbryurl, lbrytitle, dtstamp from dataof_all WHERE yturl = %s;", (urla,))
         if bool(cursor.fetchone()[0]):
             rows = cursor.fetchall()
             rowarr = []
