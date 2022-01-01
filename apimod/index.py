@@ -101,21 +101,7 @@ def getlurl():
         # else create a entry and append proper values
         # that we get from lbry api
 
-        try:
-            cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (urla,))
-
-            if bool(cursor.fetchone()[0]):
-                # select the url table
-                cursor.execute(str("SELECT * FROM " + str(urla)))
-                con.commit()
-                print(str("SELECT * FROM " + str(urla)))
-            else:
-                cursor.execute(str("CREATE TABLE " + str(urla) + "(yttitle text, lbryurl text, lbrytitle text);"))
-                con.commit()
-                # select the url table
-                cursor.execute(str("SELECT * FROM " + str(urla)))
-                print(str("SELECT * FROM " + str(urla)))
-
+            try:
                 # the following is the response format from the odysee api
                 # (https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL)
 
@@ -134,11 +120,21 @@ def getlurl():
                 # us would be lbryurl and potentially lbrytitle
                 # the other values will be fetched using some movie magic i guess!
 
+                # GET VALUES HERE
+
+                cursor.execute("insert into dataof_all (id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s)"())
+
+            except psycopg2.DatabaseError as error:
+                print("Log | N | last call could not be completed, cleaning up. %s",(error,))
+                con.rollback()
+    else:
+        cursor.execute(str("CREATE TABLE dataof_all(id integer, yturl text, yttitle text, lbryurl text, lbrytitle text, dtstamp timestamp);"))
+        con.commit()
+
+        # do we need to do all above here?
 
 
-        except psycopg2.DatabaseError as error:
-            print("Log | N | last call could not be completed, cleaning up. %s",(error,))
-            con.rollback()
+        # _______________
 
         # fetch result
 
