@@ -45,6 +45,8 @@ def isonline():
 @app.route("/api/report-error", methods=['POST'])
 def error_report():
     # report an error by sending a POST request to http://madinator.com/api/
+    # this code needs to be adapted to work better with a database rather than json
+
     with open("/home/rex/projects/wol-api/error-reports", "a") as errep:
         errep.write(str(request.get_json()))
         return '', 204
@@ -70,13 +72,15 @@ def getlurl():
 
     # check if the search request exists in the database and if so return a jsonified structure
     # of the data.
-    # else create the table and scan lbrys api and add to resp cols.
+    # else create the entry and scan lbrys api and add to resp cols.
 
-    cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (urla,))
+    # THIS CODE NEEDS TO BE CHANGED, NOW IT CREATES TABLES NOT ENTRIES!!!!!!
+
+    cursor.execute("select exists(select * from information_schema.tables where table_name=dataof_all)")
 
     if bool(cursor.fetchone()[0]):
-        # if the search request exists in the database, select it and return the values as
-        # a json dictionary
+        # if the table dataof_all exists then check if entry for urla exists, if so return
+        # a json dictionary of said entry
 
         cursor.execute(str("SELECT * FROM " + str(urla)))
         rows = cursor.fetchall()
