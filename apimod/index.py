@@ -59,16 +59,16 @@ def getlurl():
     # db structure ex:
     # [
     #   {
+    #   'id':id
     #   'yt-url':'dQw4w9WgXcQ',
     #   'yt-title':'Rick Astley - Never Gonna Give You Up (Official Music Video)',
     #   'lbry-url':'example_url',
     #   'lbry-title':'pickle rick funny '
+    #   'dtstamp':datetime
     #   }
     # ]
 
-    # check if the url consists only of integers, and if so append ''
-
-    urla = str("yt_" + request.args.get('url'))
+    urla = str(request.args.get('url'))
 
     # check if the search request exists in the database and if so return a jsonified structure
     # of the data.
@@ -81,22 +81,25 @@ def getlurl():
     if bool(cursor.fetchone()[0]):
         # if the table dataof_all exists then check if entry for urla exists, if so return
         # a json dictionary of said entry
+        cursor.execute("select col1, col2, col3, col4, col5, col6 from dataof_all WHERE yturl = %s;", (urla,))
+        if bool(cursor.fetchone()[0]):
+            rows = cursor.fetchall()
+            rowarr = []
+            for row in rows:
+                d = collections.OrderedDict()
+                d['id'] = row[0]
+                d['yturl'] = row[1]
+                d['yttitle'] = row[2]
+                d['lbryurl'] = row[3]
+                d['lbrytitle'] = row[4]
+                d['dtstamp'] = row[5]
+                rowarr.append(d)
+            return jsonify(rowarr)
 
-        cursor.execute(str("SELECT * FROM " + str(urla)))
-        rows = cursor.fetchall()
-        rowarr = []
-        for row in rows:
-            d = collections.OrderedDict()
-            d['yttitle'] = row[0]
-            d['lbryurl'] = row[1]
-            d['lbrytitle'] = row[2]
-            rowarr.append(d)
-        return jsonify(rowarr)
+        else:
 
-    else:
-
-       # else create a table with the name urla (ex. yt_dQw4w9WgXcQ) and append proper values
-       # that we get from lbry api
+        # else create a entry and append proper values
+        # that we get from lbry api
 
         try:
             cursor.execute("select exists(select * from information_schema.tables where table_name=%s)", (urla,))
