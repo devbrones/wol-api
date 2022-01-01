@@ -82,7 +82,7 @@ def getlurl():
         # if the table dataof_all exists then check if entry for urla exists, if so return
         # a json dictionary of said entry
         cursor.execute("select id, yturl, yttitle, lbryurl, lbrytitle, dtstamp from dataof_all WHERE yturl = %s;", (urla,))
-        if bool(cursor.fetchone()[0]):
+        if bool(cursor.fetchone()):
             rows = cursor.fetchall()
             rowarr = []
             for row in rows:
@@ -122,7 +122,9 @@ def getlurl():
 
                 # GET VALUES HERE
 
-                cursor.execute("insert into dataof_all (id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s)"())
+                        #test
+                cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);",(1,"ab","cd","ef","gh","202201010000",))
+                #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
 
             except psycopg2.DatabaseError as error:
                 print("Log | N | last call could not be completed, cleaning up. %s",(error,))
