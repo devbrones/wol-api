@@ -4,6 +4,7 @@ from apcnf import *
 import psycopg2
 import json
 import collections
+import youtube_dl
 
 # jumbo
 app = Flask(__name__)
@@ -120,8 +121,28 @@ def getlurl():
                 # us would be lbryurl and potentially lbrytitle
                 # the other values will be fetched using some movie magic i guess!
 
-                # GET VALUES HERE
+                #link = input("Enter the video link:")
+                #name = input("Enter the title of the video:")
+                #
+                #path = f'D:\{name}.mp3'
+                #
+                #ydl_opts = {
+                #    'outtmpl':path,
+                #    'format': 'bestaudio/best',
+                #    'postprocessors': [{
+                #        'key': 'FFmpegExtractAudio',
+                #        'preferredcodec': 'mp3',
+                #        'preferredquality': '192',
+                #    }],
+                #}
 
+                #with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                #    info_dict = ydl.extract_info(video, download=False)
+                #    video_title = info_dict.get('title', None)
+
+                
+                # GET VALUES HERE
+                
                         #test
                 cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);",(1,"ab","cd","ef","gh","202201010000",))
                 #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
