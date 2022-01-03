@@ -120,25 +120,36 @@ def getlurl():
                 # we now need to feed these values into their respective columns which for
                 # us would be lbryurl and potentially lbrytitle
                 # the other values will be fetched using some movie magic i guess!
+                
+                # yt title begin
+                ydl_opts = {
+                }
+                video = "https://youtube.com/watch?v=" + urla
+                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                    info_dict = ydl.extract_info(video, download=False)
+                    yttitle = info_dict.get('title', None)
+                # yt title end
 
-                #link = input("Enter the video link:")
-                #name = input("Enter the title of the video:")
-                #
-                #path = f'D:\{name}.mp3'
-                #
-                #ydl_opts = {
-                #    'outtmpl':path,
-                #    'format': 'bestaudio/best',
-                #    'postprocessors': [{
-                #        'key': 'FFmpegExtractAudio',
-                #        'preferredcodec': 'mp3',
-                #        'preferredquality': '192',
-                #    }],
-                #}
+                # lbry url begin
+                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL")
+                if r.status_code == "200":
+                    lut = r.json()
+                    lbryurl = lut.get(urla)
+                else:
+                    lbryurl = ""
+                # lbry url end
 
-                #with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                #    info_dict = ydl.extract_info(video, download=False)
-                #    video_title = info_dict.get('title', None)
+                # lbry title begin
+                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL")
+                if r.status_code == "200":
+                    lut = r.json()
+                    hashpos = lut.get('#')
+                    lbrytitle = lut.get(urla)[:hashpos].replace('-', ' ')
+                else:
+                    lbrytitle = "Could not get content title."
+                    #TODO: add error reporting!!!
+
+                # lbry title end
 
                 
                 # GET VALUES HERE
