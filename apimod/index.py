@@ -4,7 +4,11 @@ from apcnf import *
 import psycopg2
 import json
 import collections
+import requests
 import youtube_dl
+from datetime import datetime, timezone
+
+dt = datetime.now(timezone.utc)
 
 # jumbo
 app = Flask(__name__)
@@ -82,19 +86,26 @@ def getlurl():
     if bool(cursor.fetchone()[0]):
         # if the table dataof_all exists then check if entry for urla exists, if so return
         # a json dictionary of said entry
-        cursor.execute("select id, yturl, yttitle, lbryurl, lbrytitle, dtstamp from dataof_all WHERE yturl = %s;", (urla,))
+        cursor.execute("SELECT yturl, yttitle, lbryurl, lbrytitle, dtstamp FROM dataof_all WHERE yturl = %s;", (urla,))
+        #debug
+        print("table exists")
         if bool(cursor.fetchone()):
+            #debug
+            print("entry exists")
+            #for some reason the code seems to fail here without any exceptions so ima give this one a thinker
             rows = cursor.fetchall()
+            print(rows)
             rowarr = []
             for row in rows:
                 d = collections.OrderedDict()
-                d['id'] = row[0]
-                d['yturl'] = row[1]
-                d['yttitle'] = row[2]
-                d['lbryurl'] = row[3]
-                d['lbrytitle'] = row[4]
-                d['dtstamp'] = row[5]
+                d['yturl'] = row[0]
+                d['yttitle'] = row[1]
+                d['lbryurl'] = row[2]
+                d['lbrytitle'] = row[3]
+                d['dtstamp'] = row[4]
                 rowarr.append(d)
+
+            print(jsonify(rowarr))
             return jsonify(rowarr)
 
         else:
@@ -131,38 +142,48 @@ def getlurl():
                 # yt title end
 
                 # lbry url begin
-                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL")
-                if r.status_code == "200":
+                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=" + urla)
+                if r.status_code == 200:
                     lut = r.json()
-                    lbryurl = lut.get(urla)
+                    lbryurl = lut['data']['videos'][urla]
+                    #debug
+                    print(lbryurl)
                 else:
                     lbryurl = ""
                 # lbry url end
 
                 # lbry title begin
-                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=YOUTUBEURL")
-                if r.status_code == "200":
+                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=" + urla)
+                if r.status_code == 200:
                     lut = r.json()
-                    hashpos = lut.get('#')
-                    lbrytitle = lut.get(urla)[:hashpos].replace('-', ' ')
+                    hashpos = lut.get('/')
+                    lbrytitle = str(str(lut['data']['videos'][urla])[:hashpos]).replace('-', ' ')
+                    print(lbrytitle)
                 else:
+                    print(r.status_code)
                     lbrytitle = "Could not get content title."
                     #TODO: add error reporting!!!
 
                 # lbry title end
 
+                return_object = {
+                   'yt-url':urla,
+                   'yt-title':yttitle,
+                   'lbry-url':lbryurl,
+                   'lbry-title':lbrytitle,
+                   'dtstamp':dt
+                   }
                 
-                # GET VALUES HERE
-                
-                        #test
-                cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);",(1,"ab","cd","ef","gh","202201010000",))
+                cursor.execute("insert into dataof_all(yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s);",(urla,yttitle,lbryurl,lbrytitle,dt,))
+                con.commit()
                 #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
+                return jsonify(return_object)    
 
             except psycopg2.DatabaseError as error:
                 print("Log | N | last call could not be completed, cleaning up. %s",(error,))
                 con.rollback()
     else:
-        cursor.execute(str("CREATE TABLE dataof_all(id integer, yturl text, yttitle text, lbryurl text, lbrytitle text, dtstamp timestamp);"))
+        cursor.execute(str("CREATE TABLE dataof_all(yturl text, yttitle text, lbryurl text, lbrytitle text, dtstamp timestamp, PRIMARY KEY (yturl, yttitle));"))
         con.commit()
 
         # do we need to do all above here?
