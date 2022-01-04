@@ -2,13 +2,15 @@ from flask import Flask, jsonify, request
 import os
 from apcnf import *
 import psycopg2
+import psycopg2.extras
 import json
 import collections
 import requests
 import youtube_dl
 from datetime import datetime, timezone
 
-dt = datetime.now(timezone.utc)
+
+#dt="1212"
 
 # jumbo
 app = Flask(__name__)
@@ -40,7 +42,7 @@ print(con.get_dsn_parameters(), "\n")
 
 @app.route("/api/")
 def ret_ok():
-    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.0+c22 by Devbrones https://tibroness.org</p>"
+    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.1+c35 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
@@ -73,6 +75,7 @@ def getlurl():
     #   }
     # ]
 
+    dt =str(datetime.now(timezone.utc))
     urla = str(request.args.get('url'))
 
     # check if the search request exists in the database and if so return a jsonified structure
@@ -86,27 +89,20 @@ def getlurl():
     if bool(cursor.fetchone()[0]):
         # if the table dataof_all exists then check if entry for urla exists, if so return
         # a json dictionary of said entry
-        cursor.execute("SELECT yturl, yttitle, lbryurl, lbrytitle, dtstamp FROM dataof_all WHERE yturl = %s;", (urla,))
+        cursor.execute("SELECT * FROM dataof_all WHERE yturl = %s;", (urla,))
         #debug
         print("table exists")
         if bool(cursor.fetchone()):
             #debug
+            cur2 = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
             print("entry exists")
-            #for some reason the code seems to fail here without any exceptions so ima give this one a thinker
-            rows = cursor.fetchall()
-            print(rows)
-            rowarr = []
-            for row in rows:
-                d = collections.OrderedDict()
-                d['yturl'] = row[0]
-                d['yttitle'] = row[1]
-                d['lbryurl'] = row[2]
-                d['lbrytitle'] = row[3]
-                d['dtstamp'] = row[4]
-                rowarr.append(d)
+            cur2.execute("SELECT * FROM dataof_all WHERE yturl = %s;", (urla,))
+            res = cur2.fetchone()
+            print(type(res))
+            print(res)
+            return jsonify(res)
 
-            print(jsonify(rowarr))
-            return jsonify(rowarr)
+            #for some reason the code seems to fail here without any exceptions so ima give this one a thinker
 
         else:
 
@@ -152,29 +148,14 @@ def getlurl():
                     lbryurl = ""
                 # lbry url end
 
-                # lbry title begin
-                r = requests.get("https://api.odysee.com/yt/resolve?video_ids=" + urla)
-                if r.status_code == 200:
-                    lut = r.json()
-                    hashpos = lut.get('/')
-                    lbrytitle = str(str(lut['data']['videos'][urla])[:hashpos]).replace('-', ' ')
-                    print(lbrytitle)
-                else:
-                    print(r.status_code)
-                    lbrytitle = "Could not get content title."
-                    #TODO: add error reporting!!!
-
-                # lbry title end
-
                 return_object = {
                    'yt-url':urla,
                    'yt-title':yttitle,
                    'lbry-url':lbryurl,
-                   'lbry-title':lbrytitle,
                    'dtstamp':dt
                    }
                 
-                cursor.execute("insert into dataof_all(yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s);",(urla,yttitle,lbryurl,lbrytitle,dt,))
+                cursor.execute("insert into dataof_all(yturl, yttitle, lbryurl, dtstamp) values (%s,%s,%s,%s);",(urla,yttitle,lbryurl,dt,))
                 con.commit()
                 #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
                 return jsonify(return_object)    
@@ -183,7 +164,7 @@ def getlurl():
                 print("Log | N | last call could not be completed, cleaning up. %s",(error,))
                 con.rollback()
     else:
-        cursor.execute(str("CREATE TABLE dataof_all(yturl text, yttitle text, lbryurl text, lbrytitle text, dtstamp timestamp, PRIMARY KEY (yturl, yttitle));"))
+        cursor.execute(str("CREATE TABLE dataof_all(yturl text, yttitle text, lbryurl text, dtstamp text, PRIMARY KEY (yturl, yttitle));"))
         con.commit()
 
         # do we need to do all above here?
