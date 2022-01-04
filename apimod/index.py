@@ -153,15 +153,36 @@ def getlurl():
                     lbryurl = ""
                 # lbry url end
 
+                # NEW: lbry channel return
+                
+                ydl_opts = {
+                }
+                video = "https://youtube.com/watch?v=" + urla
+                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                    info_dict = ydl.extract_info(video, download=False)
+                    ytchan = info_dict.get('channel_id', None)
+
+                r = requests.get("https://api.odysee.com/yt/resolve?channel_ids=" + ytchan)
+                if r.status_code == 200:
+                    lut = r.json()
+                    lbrych = lut['data']['channels'][ytchan]
+                    #debug
+                else:
+                    lbrych = ""
+                
+
+                # end lcr
+
                 return_object = {
                    'yt-url':urla,
                    'yt-title':yttitle,
                    'lbry-url':lbryurl,
+                   'lbry-chn':lbrych,
                    'dtstamp':dt
                    }
                 if bool(lbryurl):
                     # if there is a lbry url
-                    cursor.execute("insert into dataof_all(yturl, yttitle, lbryurl, dtstamp) values (%s,%s,%s,%s);",(urla,yttitle,lbryurl,dt,))
+                    cursor.execute("insert into dataof_all(yturl, yttitle, lbryurl, lbrych, dtstamp) values (%s,%s,%s,%s,%s);",(urla,yttitle,lbryurl,lbrych,dt,))
                     con.commit()
                     return jsonify(return_object)    
                 else:
@@ -179,6 +200,7 @@ def getlurl():
                            yturl text,
                            yttitle text,
                            lbryurl text,
+                           lbrych text,
                            dtstamp text);"""))
         con.commit()
 

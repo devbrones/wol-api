@@ -130,3 +130,33 @@ json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes:
 
 2022-01-04 23:59:17,574 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2022-01-04 23:59:26,265 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:59:26] "[31m[1mPOST /api/report-error HTTP/1.1[0m" 400 -
+2022-01-05 00:25:32,825 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-05 00:25:32,825 INFO index MainThread : file error-reports exists
+2022-01-05 00:25:32,825 INFO index MainThread : test
+2022-01-05 00:25:32,831 INFO index MainThread : PostgreSQL server details
+2022-01-05 00:25:32,831 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+
+2022-01-05 00:25:32,834 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-05 00:25:41,148 WARNING index Thread-1 : no table found, creating
+2022-01-05 00:25:41,194 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 00:25:41] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
+2022-01-05 00:25:44,139 INFO index Thread-2 : table exists
+2022-01-05 00:25:44,898 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
+2022-01-05 00:25:45,210 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?video_ids=IgF3OX8nT0w HTTP/1.1" 200 None
+2022-01-05 00:25:45,695 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
+2022-01-05 00:25:45,896 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCHnyfMqiRRG1u-2MsSQLbXA HTTP/1.1" 200 None
+2022-01-05 00:25:45,904 INFO werkzeug Thread-2 : 127.0.0.1 - - [05/Jan/2022 00:25:45] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
+2022-01-05 00:25:50,554 INFO index Thread-3 : table exists
+2022-01-05 00:25:50,555 INFO index Thread-3 : entry exists
+2022-01-05 00:25:50,555 INFO werkzeug Thread-3 : 127.0.0.1 - - [05/Jan/2022 00:25:50] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
+2022-01-05 00:25:52,273 INFO index Thread-4 : table exists
+2022-01-05 00:25:52,273 INFO index Thread-4 : entry exists
+2022-01-05 00:25:52,274 INFO werkzeug Thread-4 : 127.0.0.1 - - [05/Jan/2022 00:25:52] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
+2022-01-05 00:26:09,753 INFO index Thread-5 : table exists
+2022-01-05 00:26:10,280 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.odysee.com:443
+2022-01-05 00:26:10,577 DEBUG urllib3.connectionpool Thread-5 : https://api.odysee.com:443 "GET /yt/resolve?video_ids=QrHsFZBab4U HTTP/1.1" 200 None
+2022-01-05 00:26:11,101 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.odysee.com:443
+2022-01-05 00:26:11,288 DEBUG urllib3.connectionpool Thread-5 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
+2022-01-05 00:26:11,313 INFO werkzeug Thread-5 : 127.0.0.1 - - [05/Jan/2022 00:26:11] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
+2022-01-05 00:26:13,605 INFO index Thread-6 : table exists
+2022-01-05 00:26:13,606 INFO index Thread-6 : entry exists
+2022-01-05 00:26:13,607 INFO werkzeug Thread-6 : 127.0.0.1 - - [05/Jan/2022 00:26:13] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
