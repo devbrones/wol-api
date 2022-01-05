@@ -160,3 +160,13 @@ json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes:
 2022-01-05 00:26:13,605 INFO index Thread-6 : table exists
 2022-01-05 00:26:13,606 INFO index Thread-6 : entry exists
 2022-01-05 00:26:13,607 INFO werkzeug Thread-6 : 127.0.0.1 - - [05/Jan/2022 00:26:13] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
+2022-01-05 01:37:51,135 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-05 01:37:51,135 INFO index MainThread : file error-reports exists
+2022-01-05 01:37:51,135 INFO index MainThread : test
+2022-01-05 01:37:51,141 INFO index MainThread : PostgreSQL server details
+2022-01-05 01:37:51,141 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+
+2022-01-05 01:37:51,143 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-05 01:37:52,412 INFO index Thread-1 : table exists
+2022-01-05 01:37:52,412 INFO index Thread-1 : entry exists
+2022-01-05 01:37:52,414 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 01:37:52] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -

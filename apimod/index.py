@@ -48,18 +48,62 @@ app.logger.info(str(str(con.get_dsn_parameters()) + "\n"))
 
 @app.route("/api/")
 def ret_ok():
+    """
+    Returns the Documentation webpage.
+
+    This function literally does nothing but that.
+
+    Args:
+        None
+    Returns:
+        The API documentation in HTML.
+    Raises:
+        200 OK
+
+    """
     return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.1+c35 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
+    """
+    Returns a JSON online object.
+
+    This feature is obsolete but I kept it anyways.
+
+    Args:
+        None
+    Returns:
+        [{"online":true}]
+    Raises:
+        200 OK
+
+    """
     online = {"online":True}
     return jsonify(online)
 
 @app.route("/api/report-error", methods=['POST'])
 def error_report():
-    # report an error by sending a POST request to http://madinator.com/api/
-    # this code needs to be adapted to work better with a database rather than json
+    """ 
+    Report an error by sending a POST request to /api/report-error
     
+    Error reporting function.
+    TODO: This code needs to be adapted to work better with a database rather than JSON
+    
+    Args:
+        error-report-type: Can be "exception", "bug", or even "abcdefg"
+        error-report-value: The error message to be passed to the log, i.e. "Extension did not load."
+    
+    Returns:
+        204 None
+    
+    Raises:
+        Error in "error-reports" file.
+    
+    Examples:
+        curl -X POST -H "Content-Type: application/json" -d '{"error-report-type":"exception","error-report-value":"Extension could not read webcontent"}' http://localhost:5000/api/report-error
+        
+        Writes an error in the above seen JSON format into the "error-reports" file.
+    """
     dat = request.get_json()
 
     if "error-report-value" in dat:
@@ -72,6 +116,38 @@ def error_report():
 
 @app.route("/api/get-lbry-url", methods=['GET'])
 def getlurl():
+    """ 
+    Get information about a YouTube Video.
+    
+    This function gets information on from odysee's API and saves that data to a database, and eventually returns a JSON Object.
+    If an entry for the URL exists then it reads from that database entry.
+
+    Args:
+        ?url= : The YouTube URL
+    
+    Returns:
+        A JSON dictionary like this one:
+            "{"dtstamp":"2022-01-04 23:26:09.752372+00:00","id":2,"lbrych":"@AlphaNerd#8d497e7e96c789364c56aea7a35827d2dc1eea65","lbryurl":"@AlphaNerd#8/how-monero-works-and-why-its-a-better#a","yttitle":"How Monero Works (And Why its a Better Currency Than BTC)","yturl":"QrHsFZBab4U"}"
+    
+    Raises:
+        Entry in log. 
+        Database functions.
+    
+    Examples:
+        curl http://localhost:5000/api/get-lbry-url?url=QrHsFZBab4U
+        Returns: 
+        
+        {
+            "dtstamp":"2022-01-04 23:26:09.752372+00:00",
+            "id":2,
+            "lbrych":"@AlphaNerd#8d497e7e96c789364c56aea7a35827d2dc1eea65",
+            "lbryurl":"@AlphaNerd#8/how-monero-works-and-why-its-a-better#a",
+            "yttitle":"How Monero Works (And Why its a Better Currency Than BTC)",
+            "yturl":"QrHsFZBab4U"
+        }
+            
+
+    """
     # database management goes here, it will read the db for (request.args.get('url'))
     # and if it is found it returns url, otherwise it would be wise to query the LBRY
     # API and get the new url and store to db
