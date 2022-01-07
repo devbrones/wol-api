@@ -163,8 +163,9 @@ def getlch():
                 r = requests.get("https://api.odysee.com/yt/resolve?channel_ids=" + urla)
                 if r.status_code == 200:
                     lut = r.json()
+                    print(lut)
                     lbrych = lut['data']['channels'][urla]
-                    print("ch found")#debug
+                    print(str("ch found, " + str(lbrych)))#debug
                 else:
                     lbrych = ""
                 
@@ -183,10 +184,12 @@ def getlch():
                    }
                 if bool(lbrych):
                     # if there is a lbry url
-                    cursor.execute("insert into dataof_channels(yturl, lbrychn, dtstamp) values (%s,%s,%s);",(urla,lbrych,dt,))
+                    print("there is a lbry url")
+                    cursor.execute("insert into dataof_channels(yturl, lbrych, dtstamp) values (%s,%s,%s);",(urla,lbrych,dt,))
                     con.commit()
-                    return jsonify(return_object)    
+                    return jsonify(return_object) 
                 else:
+                    print("there is no lbry url")
                     print(return_object)
                     return jsonify(return_object)    
 
