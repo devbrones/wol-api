@@ -226,3 +226,21 @@ jinja2.exceptions.TemplateNotFound: index.html
 2022-01-07 13:41:30,462 INFO werkzeug Thread-37 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menudata.js HTTP/1.1[0m" 404 -
 2022-01-07 13:41:30,474 INFO werkzeug Thread-38 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menu.js HTTP/1.1[0m" 404 -
 2022-01-07 13:41:30,480 INFO werkzeug Thread-39 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/doxygen.png HTTP/1.1[0m" 404 -
+2022-01-07 15:32:56,386 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 15:32:56,386 INFO index MainThread : file error-reports exists
+2022-01-07 15:32:56,391 INFO index MainThread : connected to database
+2022-01-07 15:32:56,391 INFO index MainThread : PostgreSQL server details
+2022-01-07 15:32:56,391 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+
+2022-01-07 15:32:56,394 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 15:33:06,079 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 15:33:06] "[33mGET /api/ HTTP/1.1[0m" 404 -
+2022-01-07 15:33:06,309 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 15:33:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-01-07 15:33:09,369 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 15:33:09] "[33mGET /api/ HTTP/1.1[0m" 404 -
+2022-01-07 15:34:25,633 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 15:34:25,633 INFO index MainThread : file error-reports exists
+2022-01-07 15:34:25,639 INFO index MainThread : connected to database
+2022-01-07 15:34:25,639 INFO index MainThread : PostgreSQL server details
+2022-01-07 15:34:25,639 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+
+2022-01-07 15:34:25,641 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 15:34:29,431 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 15:34:29] "GET /api/ HTTP/1.1" 200 -

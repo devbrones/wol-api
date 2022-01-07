@@ -65,7 +65,7 @@ import logging
 # - Created by Tibroness (https://github.com/devbrones) as per request by Madiator (https://github.com/kodxana)
 # - Modified by Tibroness (https://github.com/devbrones)
 
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, send_from_directory
 import os
 from apcnf import *
 import psycopg2
@@ -115,12 +115,12 @@ def ret_ok():
     This function literally does nothing but that.
 
     @param None None
-    @return     The API documentation in HTML.
+    @return     The API documentation in pdf.
     Raises:
         200 OK
     """
     
-    return ("moved to github")
+    return send_from_directory("../../docs/wol-docs/latex/", 'refman.pdf')
 
 @app.route("/api/is-online")
 def isonline():
