@@ -1,0 +1,3 @@
+[submodule "docs/wol-docs"]
+	path = docs/wol-docs
+	url = https://github.com/devbrones/wol-docs

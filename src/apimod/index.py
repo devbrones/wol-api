@@ -65,7 +65,7 @@ import logging
 # - Created by Tibroness (https://github.com/devbrones) as per request by Madiator (https://github.com/kodxana)
 # - Modified by Tibroness (https://github.com/devbrones)
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import os
 from apcnf import *
 import psycopg2
@@ -120,7 +120,7 @@ def ret_ok():
         200 OK
     """
     
-    return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.1+c35 by Devbrones https://tibroness.org</p>"
+    return ("moved to github")
 
 @app.route("/api/is-online")
 def isonline():

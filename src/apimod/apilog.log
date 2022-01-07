@@ -1,61 +1,11 @@
-2022-01-04 23:41:20,769 INFO index MainThread : file error-reports does not exist, creating
-2022-01-04 23:41:20,769 INFO index MainThread : test
-2022-01-04 23:41:20,774 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:41:20,818 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:42:26,811 INFO index MainThread : file error-reports exists
-2022-01-04 23:42:26,811 INFO index MainThread : test
-2022-01-04 23:42:26,817 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:42:59,179 INFO index MainThread : file error-reports exists
-2022-01-04 23:42:59,179 INFO index MainThread : test
-2022-01-04 23:42:59,185 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:42:59,185 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+2022-01-07 13:33:54,132 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:33:54,132 INFO index MainThread : file error-reports does not exist, creating
+2022-01-07 13:33:54,137 INFO index MainThread : connected to database
+2022-01-07 13:33:54,138 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:33:54,138 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-04 23:42:59,187 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:44:15,720 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:44:15,721 INFO index MainThread : file error-reports exists
-2022-01-04 23:44:15,721 INFO index MainThread : test
-2022-01-04 23:44:15,726 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:44:15,726 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:44:15,729 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:47:28,189 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:47:28,189 INFO index MainThread : file error-reports exists
-2022-01-04 23:47:28,189 INFO index MainThread : test
-2022-01-04 23:47:28,195 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:47:28,195 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:47:28,197 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:47:37,279 INFO index Thread-1 : table exists
-2022-01-04 23:47:38,175 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-04 23:47:38,570 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?video_ids=Pd0auHlbddg HTTP/1.1" 200 None
-2022-01-04 23:47:38,576 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:47:38] "GET /api/get-lbry-url?url=Pd0auHlbddg HTTP/1.1" 200 -
-2022-01-04 23:47:56,984 INFO werkzeug Thread-2 : 127.0.0.1 - - [04/Jan/2022 23:47:56] "[31m[1mGET /api/report-error HTTP/1.1[0m" 405 -
-2022-01-04 23:47:57,171 INFO werkzeug Thread-3 : 127.0.0.1 - - [04/Jan/2022 23:47:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2022-01-04 23:48:16,794 INFO werkzeug Thread-4 : 127.0.0.1 - - [04/Jan/2022 23:48:16] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 204 -
-2022-01-04 23:49:20,868 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:49:20,868 INFO index MainThread : file error-reports exists
-2022-01-04 23:49:20,868 INFO index MainThread : test
-2022-01-04 23:49:20,874 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:49:20,874 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:49:20,876 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:49:23,439 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:49:23] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 204 -
-2022-01-04 23:49:56,692 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:49:56,692 INFO index MainThread : file error-reports exists
-2022-01-04 23:49:56,692 INFO index MainThread : test
-2022-01-04 23:49:56,698 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:49:56,698 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:49:56,700 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:50:16,411 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:50:16] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 204 -
-2022-01-04 23:57:08,975 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:57:08,975 INFO index MainThread : file error-reports exists
-2022-01-04 23:57:08,975 INFO index MainThread : test
-2022-01-04 23:57:08,980 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:57:08,981 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:57:08,983 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:57:14,026 ERROR index Thread-1 : Exception on /api/report-error [POST]
+2022-01-07 13:33:54,140 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:33:57,468 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -65,13 +15,18 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "index.py", line 63, in error_report
-    dat = json.loads(request.get_json())
-  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
-    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
-TypeError: the JSON object must be str, bytes or bytearray, not dict
-2022-01-04 23:57:14,045 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:57:14] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 500 -
-2022-01-04 23:57:19,753 ERROR index Thread-2 : Exception on /api/report-error [POST]
+  File "index.py", line 123, in ret_ok
+    return render_template('../../docs/html/index.html', body=body, block=block)
+NameError: name 'render_template' is not defined
+2022-01-07 13:33:57,469 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:33:57] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:35:47,871 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:35:47,871 INFO index MainThread : file error-reports exists
+2022-01-07 13:35:47,876 INFO index MainThread : connected to database
+2022-01-07 13:35:47,876 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:35:47,876 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+
+2022-01-07 13:35:47,879 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:35:50,079 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -81,20 +36,18 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "index.py", line 63, in error_report
-    dat = json.loads(request.get_json())
-  File "/usr/lib/python3.8/json/__init__.py", line 341, in loads
-    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
-TypeError: the JSON object must be str, bytes or bytearray, not dict
-2022-01-04 23:57:19,755 INFO werkzeug Thread-2 : 127.0.0.1 - - [04/Jan/2022 23:57:19] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 500 -
-2022-01-04 23:58:01,849 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:58:01,849 INFO index MainThread : file error-reports exists
-2022-01-04 23:58:01,849 INFO index MainThread : test
-2022-01-04 23:58:01,855 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:58:01,855 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+  File "index.py", line 123, in ret_ok
+    return render_template('../../docs/html/index.html', body=body, block=block)
+NameError: name 'body' is not defined
+2022-01-07 13:35:50,081 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:35:50] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:36:15,859 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:36:15,859 INFO index MainThread : file error-reports exists
+2022-01-07 13:36:15,865 INFO index MainThread : connected to database
+2022-01-07 13:36:15,865 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:36:15,865 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-04 23:58:01,857 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:58:03,540 ERROR index Thread-1 : Exception on /api/report-error [POST]
+2022-01-07 13:36:15,867 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:36:17,963 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -104,361 +57,32 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "index.py", line 63, in error_report
-    dat = json.loads(str(request.get_json()))
-  File "/usr/lib/python3.8/json/__init__.py", line 357, in loads
-    return _default_decoder.decode(s)
-  File "/usr/lib/python3.8/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/usr/lib/python3.8/json/decoder.py", line 353, in raw_decode
-    obj, end = self.scan_once(s, idx)
-json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
-2022-01-04 23:58:03,542 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:58:03] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 500 -
-2022-01-04 23:59:04,754 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:59:04,754 INFO index MainThread : file error-reports exists
-2022-01-04 23:59:04,754 INFO index MainThread : test
-2022-01-04 23:59:04,760 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:59:04,760 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+  File "index.py", line 123, in ret_ok
+    return render_template('../../docs/html/index.html')
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ../../docs/html/index.html
+2022-01-07 13:36:18,202 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:36:18] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:37:34,155 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:37:34,155 INFO index MainThread : file error-reports exists
+2022-01-07 13:37:34,160 INFO index MainThread : connected to database
+2022-01-07 13:37:34,161 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:37:34,161 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-04 23:59:04,762 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:59:06,851 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:59:06] "[35m[1mPOST /api/report-error HTTP/1.1[0m" 204 -
-2022-01-04 23:59:17,566 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-04 23:59:17,566 INFO index MainThread : file error-reports exists
-2022-01-04 23:59:17,566 INFO index MainThread : test
-2022-01-04 23:59:17,571 INFO index MainThread : PostgreSQL server details
-2022-01-04 23:59:17,571 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-04 23:59:17,574 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-04 23:59:26,265 INFO werkzeug Thread-1 : 127.0.0.1 - - [04/Jan/2022 23:59:26] "[31m[1mPOST /api/report-error HTTP/1.1[0m" 400 -
-2022-01-05 00:25:32,825 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 00:25:32,825 INFO index MainThread : file error-reports exists
-2022-01-05 00:25:32,825 INFO index MainThread : test
-2022-01-05 00:25:32,831 INFO index MainThread : PostgreSQL server details
-2022-01-05 00:25:32,831 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 00:25:32,834 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 00:25:41,148 WARNING index Thread-1 : no table found, creating
-2022-01-05 00:25:41,194 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 00:25:41] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
-2022-01-05 00:25:44,139 INFO index Thread-2 : table exists
-2022-01-05 00:25:44,898 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 00:25:45,210 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?video_ids=IgF3OX8nT0w HTTP/1.1" 200 None
-2022-01-05 00:25:45,695 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 00:25:45,896 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCHnyfMqiRRG1u-2MsSQLbXA HTTP/1.1" 200 None
-2022-01-05 00:25:45,904 INFO werkzeug Thread-2 : 127.0.0.1 - - [05/Jan/2022 00:25:45] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
-2022-01-05 00:25:50,554 INFO index Thread-3 : table exists
-2022-01-05 00:25:50,555 INFO index Thread-3 : entry exists
-2022-01-05 00:25:50,555 INFO werkzeug Thread-3 : 127.0.0.1 - - [05/Jan/2022 00:25:50] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
-2022-01-05 00:25:52,273 INFO index Thread-4 : table exists
-2022-01-05 00:25:52,273 INFO index Thread-4 : entry exists
-2022-01-05 00:25:52,274 INFO werkzeug Thread-4 : 127.0.0.1 - - [05/Jan/2022 00:25:52] "GET /api/get-lbry-url?url=IgF3OX8nT0w HTTP/1.1" 200 -
-2022-01-05 00:26:09,753 INFO index Thread-5 : table exists
-2022-01-05 00:26:10,280 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 00:26:10,577 DEBUG urllib3.connectionpool Thread-5 : https://api.odysee.com:443 "GET /yt/resolve?video_ids=QrHsFZBab4U HTTP/1.1" 200 None
-2022-01-05 00:26:11,101 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 00:26:11,288 DEBUG urllib3.connectionpool Thread-5 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 00:26:11,313 INFO werkzeug Thread-5 : 127.0.0.1 - - [05/Jan/2022 00:26:11] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
-2022-01-05 00:26:13,605 INFO index Thread-6 : table exists
-2022-01-05 00:26:13,606 INFO index Thread-6 : entry exists
-2022-01-05 00:26:13,607 INFO werkzeug Thread-6 : 127.0.0.1 - - [05/Jan/2022 00:26:13] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
-2022-01-05 01:37:51,135 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 01:37:51,135 INFO index MainThread : file error-reports exists
-2022-01-05 01:37:51,135 INFO index MainThread : test
-2022-01-05 01:37:51,141 INFO index MainThread : PostgreSQL server details
-2022-01-05 01:37:51,141 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 01:37:51,143 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 01:37:52,412 INFO index Thread-1 : table exists
-2022-01-05 01:37:52,412 INFO index Thread-1 : entry exists
-2022-01-05 01:37:52,414 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 01:37:52] "GET /api/get-lbry-url?url=QrHsFZBab4U HTTP/1.1" 200 -
-2022-01-05 12:47:13,732 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:47:13,732 INFO index MainThread : file error-reports exists
-2022-01-05 12:47:13,732 INFO index MainThread : test
-2022-01-05 12:47:13,798 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:47:13,799 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:47:13,811 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:47:26,529 WARNING index Thread-1 : no table found, creating
-2022-01-05 12:47:26,591 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 12:47:26] "GET /api/get-lbry-channel?url= HTTP/1.1" 200 -
-2022-01-05 12:47:26,780 INFO werkzeug Thread-2 : 127.0.0.1 - - [05/Jan/2022 12:47:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2022-01-05 12:47:48,919 INFO index Thread-3 : table exists - channels
-2022-01-05 12:47:48,920 DEBUG urllib3.connectionpool Thread-3 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:47:49,531 DEBUG urllib3.connectionpool Thread-3 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-05 12:47:49,536 INFO werkzeug Thread-3 : 127.0.0.1 - - [05/Jan/2022 12:47:49] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-05 12:48:22,166 INFO index Thread-4 : table exists - channels
-2022-01-05 12:48:22,166 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:48:22,508 DEBUG urllib3.connectionpool Thread-4 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=MentalOutlaw HTTP/1.1" 200 None
-2022-01-05 12:48:22,512 INFO werkzeug Thread-4 : 127.0.0.1 - - [05/Jan/2022 12:48:22] "GET /api/get-lbry-channel?url=MentalOutlaw HTTP/1.1" 200 -
-2022-01-05 12:49:17,457 INFO index Thread-6 : table exists - channels
-2022-01-05 12:49:17,458 DEBUG urllib3.connectionpool Thread-6 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:49:17,800 DEBUG urllib3.connectionpool Thread-6 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:49:17,805 WARNING index Thread-6 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:49:17,806 ERROR index Thread-6 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:49:17,809 INFO werkzeug Thread-6 : 127.0.0.1 - - [05/Jan/2022 12:49:17] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 12:50:20,167 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:50:20,167 INFO index MainThread : file error-reports exists
-2022-01-05 12:50:20,167 INFO index MainThread : test
-2022-01-05 12:50:20,173 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:50:20,173 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:50:20,175 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:50:56,153 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:50:56,153 INFO index MainThread : file error-reports exists
-2022-01-05 12:50:56,153 INFO index MainThread : test
-2022-01-05 12:50:56,160 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:50:56,160 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:50:56,162 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:50:56,982 INFO index Thread-1 : table exists - channels
-2022-01-05 12:50:56,983 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:50:57,338 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:50:57,343 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:50:57,344 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:50:57,346 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 12:50:57] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 12:50:58,816 INFO index Thread-2 : table exists - channels
-2022-01-05 12:50:58,817 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:50:59,074 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:50:59,078 WARNING index Thread-2 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:50:59,078 ERROR index Thread-2 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:50:59,080 INFO werkzeug Thread-2 : 127.0.0.1 - - [05/Jan/2022 12:50:59] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 12:52:18,735 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:52:18,735 INFO index MainThread : file error-reports exists
-2022-01-05 12:52:18,735 INFO index MainThread : test
-2022-01-05 12:52:18,741 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:52:18,741 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:52:18,744 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:52:20,256 INFO index Thread-1 : table exists - channels
-2022-01-05 12:52:20,257 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:52:20,585 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:52:20,589 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:52:20,590 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:52:20,592 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 12:52:20] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 12:52:51,128 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:52:51,128 INFO index MainThread : file error-reports exists
-2022-01-05 12:52:51,128 INFO index MainThread : test
-2022-01-05 12:52:51,133 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:52:51,133 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:52:51,136 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:52:51,899 INFO index Thread-1 : table exists - channels
-2022-01-05 12:52:51,900 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:52:52,334 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:52:52,337 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:52:52,337 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:52:52,339 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 12:52:52] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 12:53:36,605 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 12:53:36,605 INFO index MainThread : file error-reports exists
-2022-01-05 12:53:36,605 INFO index MainThread : test
-2022-01-05 12:53:36,611 INFO index MainThread : PostgreSQL server details
-2022-01-05 12:53:36,611 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 12:53:36,614 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 12:53:38,074 INFO index Thread-1 : table exists - channels
-2022-01-05 12:53:38,076 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 12:53:38,319 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 12:53:38,324 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 12:53:38,325 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 12:53:38,327 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 12:53:38] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 13:00:22,335 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 13:00:22,335 INFO index MainThread : file error-reports exists
-2022-01-05 13:00:22,335 INFO index MainThread : test
-2022-01-05 13:00:22,340 INFO index MainThread : PostgreSQL server details
-2022-01-05 13:00:22,340 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 13:00:22,343 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 13:00:25,261 INFO index Thread-1 : table exists - channels
-2022-01-05 13:00:25,263 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 13:00:25,656 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 13:00:25,660 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 13:00:25,662 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 13:00:25,666 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 13:00:25] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 13:00:27,615 INFO index Thread-2 : table exists - channels
-2022-01-05 13:00:27,616 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 13:00:27,908 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 13:00:27,914 WARNING index Thread-2 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 13:00:27,915 ERROR index Thread-2 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 13:00:27,917 INFO werkzeug Thread-2 : 127.0.0.1 - - [05/Jan/2022 13:00:27] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-05 13:00:46,784 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-05 13:00:46,784 INFO index MainThread : file error-reports exists
-2022-01-05 13:00:46,784 INFO index MainThread : test
-2022-01-05 13:00:46,791 INFO index MainThread : PostgreSQL server details
-2022-01-05 13:00:46,791 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-05 13:00:46,794 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-05 13:00:47,716 INFO index Thread-1 : table exists - channels
-2022-01-05 13:00:47,717 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-05 13:00:47,979 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-05 13:00:47,982 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-05 13:00:47,982 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-05 13:00:47,984 INFO werkzeug Thread-1 : 127.0.0.1 - - [05/Jan/2022 13:00:47] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-07 10:50:15,201 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 10:50:15,219 INFO index MainThread : file error-reports exists
-2022-01-07 10:50:15,219 INFO index MainThread : test
-2022-01-07 10:50:15,741 INFO index MainThread : PostgreSQL server details
-2022-01-07 10:50:15,741 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 10:50:15,755 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 10:50:17,200 INFO index Thread-1 : table exists - channels
-2022-01-07 10:50:17,204 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 10:50:17,612 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-07 10:50:17,880 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-07 10:50:17,882 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-07 10:50:17,886 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 10:50:17] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-07 10:50:18,587 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 10:50:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2022-01-07 11:05:21,955 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:05:21,961 INFO index MainThread : file error-reports exists
-2022-01-07 11:05:21,961 INFO index MainThread : test
-2022-01-07 11:05:22,240 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:05:22,240 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:05:22,249 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:05:23,538 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:05:23] "[33mGET / HTTP/1.1[0m" 404 -
-2022-01-07 11:05:32,359 INFO index Thread-2 : table exists - channels
-2022-01-07 11:05:32,363 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:05:32,879 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:05:32,883 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 11:05:32] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:05:45,084 INFO index Thread-3 : table exists - channels
-2022-01-07 11:05:45,088 DEBUG urllib3.connectionpool Thread-3 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:05:45,371 DEBUG urllib3.connectionpool Thread-3 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:05:45,375 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 11:05:45] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:06:47,697 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:06:47,697 INFO index MainThread : file error-reports exists
-2022-01-07 11:06:47,697 INFO index MainThread : test
-2022-01-07 11:06:47,738 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:06:47,738 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:06:47,741 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:06:48,352 INFO index Thread-1 : table exists - channels
-2022-01-07 11:06:48,354 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:06:48,655 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:06:48,660 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:06:48] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:06:50,481 INFO index Thread-2 : table exists - channels
-2022-01-07 11:06:50,482 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:06:50,703 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:06:50,708 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 11:06:50] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:06:51,616 INFO index Thread-3 : table exists - channels
-2022-01-07 11:06:51,618 DEBUG urllib3.connectionpool Thread-3 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:06:51,830 DEBUG urllib3.connectionpool Thread-3 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:06:51,834 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 11:06:51] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:06:52,640 INFO index Thread-4 : table exists - channels
-2022-01-07 11:06:52,641 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:06:52,853 DEBUG urllib3.connectionpool Thread-4 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:06:52,858 INFO werkzeug Thread-4 : 127.0.0.1 - - [07/Jan/2022 11:06:52] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:07:04,807 INFO index Thread-5 : table exists - channels
-2022-01-07 11:07:04,808 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:07:05,044 DEBUG urllib3.connectionpool Thread-5 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=MentalOutlaw HTTP/1.1" 200 None
-2022-01-07 11:07:05,049 INFO werkzeug Thread-5 : 127.0.0.1 - - [07/Jan/2022 11:07:05] "GET /api/get-lbry-channel?url=MentalOutlaw HTTP/1.1" 200 -
-2022-01-07 11:09:28,739 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:09:28,739 INFO index MainThread : file error-reports exists
-2022-01-07 11:09:28,739 INFO index MainThread : test
-2022-01-07 11:09:28,745 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:09:28,745 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:09:28,747 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:09:31,833 INFO index Thread-1 : table exists - channels
-2022-01-07 11:09:31,836 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:09:32,091 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=MentalOutlaw HTTP/1.1" 200 None
-2022-01-07 11:09:32,094 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
+2022-01-07 13:37:34,163 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:37:35,825 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -468,148 +92,137 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "index.py", line 167, in getlch
-    print(str("ch found, " + lbrych))#debug
-TypeError: can only concatenate str (not "NoneType") to str
-2022-01-07 11:09:32,195 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:09:32] "[35m[1mGET /api/get-lbry-channel?url=MentalOutlaw HTTP/1.1[0m" 500 -
-2022-01-07 11:10:47,744 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:10:47,745 INFO index MainThread : file error-reports exists
-2022-01-07 11:10:47,745 INFO index MainThread : test
-2022-01-07 11:10:47,750 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:10:47,750 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+  File "index.py", line 123, in ret_ok
+    return render_template('index.html')
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2022-01-07 13:37:35,827 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:37:35] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:38:49,855 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:38:49,855 INFO index MainThread : file error-reports exists
+2022-01-07 13:38:49,861 INFO index MainThread : connected to database
+2022-01-07 13:38:49,861 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:38:49,861 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-07 11:10:47,752 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:10:49,253 INFO index Thread-1 : table exists - channels
-2022-01-07 11:10:49,254 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:10:49,605 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=MentalOutlaw HTTP/1.1" 200 None
-2022-01-07 11:10:49,610 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:10:49] "GET /api/get-lbry-channel?url=MentalOutlaw HTTP/1.1" 200 -
-2022-01-07 11:12:06,960 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:12:06,960 INFO index MainThread : file error-reports exists
-2022-01-07 11:12:06,960 INFO index MainThread : test
-2022-01-07 11:12:06,966 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:12:06,966 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:12:06,969 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:12:12,297 INFO index Thread-1 : table exists - channels
-2022-01-07 11:12:12,299 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:12:12,552 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=MentalOutlaw HTTP/1.1" 200 None
-2022-01-07 11:12:12,557 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:12:12] "GET /api/get-lbry-channel?url=MentalOutlaw HTTP/1.1" 200 -
-2022-01-07 11:12:25,998 INFO index Thread-2 : table exists - channels
-2022-01-07 11:12:25,999 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:12:26,269 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 11:12:26,274 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 11:12:26] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 11:13:31,807 INFO index Thread-3 : table exists - channels
-2022-01-07 11:13:31,808 DEBUG urllib3.connectionpool Thread-3 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:13:32,111 DEBUG urllib3.connectionpool Thread-3 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-07 11:13:32,116 WARNING index Thread-3 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-07 11:13:32,117 ERROR index Thread-3 : Exception on /api/get-lbry-channel [GET]
+2022-01-07 13:38:49,864 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:38:51,970 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-07 11:13:32,119 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 11:13:32] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-07 11:15:35,690 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:15:35,690 INFO index MainThread : file error-reports exists
-2022-01-07 11:15:35,690 INFO index MainThread : test
-2022-01-07 11:15:35,696 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:15:35,696 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "index.py", line 123, in ret_ok
+    return render_template('./index.html')
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./index.html
+2022-01-07 13:38:51,972 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:38:51] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:39:19,633 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:39:19,633 INFO index MainThread : file error-reports exists
+2022-01-07 13:39:19,638 INFO index MainThread : connected to database
+2022-01-07 13:39:19,638 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:39:19,638 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-07 11:15:35,699 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:15:36,933 INFO index Thread-1 : table exists - channels
-2022-01-07 11:15:36,934 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:15:37,147 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-07 11:15:37,153 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-07 11:15:37,154 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
+2022-01-07 13:39:19,641 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:39:21,809 ERROR index Thread-1 : Exception on /api/ [GET]
 Traceback (most recent call last):
   File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-07 11:15:37,157 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:15:37] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-07 11:16:00,071 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:16:00,071 INFO index MainThread : file error-reports exists
-2022-01-07 11:16:00,071 INFO index MainThread : test
-2022-01-07 11:16:00,076 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:16:00,077 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "index.py", line 123, in ret_ok
+    return render_template('index.html')
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index.html
+2022-01-07 13:39:21,811 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:39:21] "[35m[1mGET /api/ HTTP/1.1[0m" 500 -
+2022-01-07 13:41:25,421 INFO index MainThread : NEW SESSION ___________________________________________________
+2022-01-07 13:41:25,421 INFO index MainThread : file error-reports exists
+2022-01-07 13:41:25,426 INFO index MainThread : connected to database
+2022-01-07 13:41:25,427 INFO index MainThread : PostgreSQL server details
+2022-01-07 13:41:25,427 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
 
-2022-01-07 11:16:00,079 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:16:01,920 INFO index Thread-1 : table exists - channels
-2022-01-07 11:16:01,921 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:16:02,438 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-07 11:16:02,442 WARNING index Thread-1 : last call could not be completed, cleaning up. (UndefinedColumn('column "lbrychn" of relation "dataof_channels" does not exist\nLINE 1: insert into dataof_channels(yturl, lbrychn, dtstamp) values ...\n                                           ^\n'),)
-2022-01-07 11:16:02,443 ERROR index Thread-1 : Exception on /api/get-lbry-channel [GET]
-Traceback (most recent call last):
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1519, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1538, in finalize_request
-    response = self.make_response(rv)
-  File "/home/rex/.local/share/virtualenvs/wol-api-A8BaBamq/lib/python3.8/site-packages/flask/app.py", line 1701, in make_response
-    raise TypeError(
-TypeError: The view function for 'getlch' did not return a valid response. The function either returned None or ended without a return statement.
-2022-01-07 11:16:02,446 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:16:02] "[35m[1mGET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1[0m" 500 -
-2022-01-07 11:16:54,597 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:16:54,597 INFO index MainThread : file error-reports exists
-2022-01-07 11:16:54,597 INFO index MainThread : test
-2022-01-07 11:16:54,602 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:16:54,602 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:16:54,605 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:17:08,736 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:17:08,736 INFO index MainThread : file error-reports exists
-2022-01-07 11:17:08,736 INFO index MainThread : test
-2022-01-07 11:17:08,742 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:17:08,742 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:17:08,744 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:17:11,323 INFO index Thread-1 : table exists - channels
-2022-01-07 11:17:11,325 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 11:17:11,559 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 None
-2022-01-07 11:17:13,233 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:17:13] "GET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 -
-2022-01-07 11:17:31,977 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 11:17:31,977 INFO index MainThread : file error-reports exists
-2022-01-07 11:17:31,977 INFO index MainThread : test
-2022-01-07 11:17:31,982 INFO index MainThread : PostgreSQL server details
-2022-01-07 11:17:31,982 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 11:17:31,985 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 11:17:33,737 INFO index Thread-1 : table exists - channels
-2022-01-07 11:17:33,737 INFO index Thread-1 : entry exists
-2022-01-07 11:17:33,738 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 11:17:33] "GET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 -
-2022-01-07 11:17:38,754 INFO index Thread-2 : table exists - channels
-2022-01-07 11:17:38,754 INFO index Thread-2 : entry exists
-2022-01-07 11:17:38,756 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 11:17:38] "GET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 -
-2022-01-07 12:39:56,449 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 12:39:56,449 INFO index MainThread : file error-reports exists
-2022-01-07 12:42:49,247 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 12:42:49,247 INFO index MainThread : file error-reports exists
-2022-01-07 12:45:44,205 INFO index MainThread : NEW SESSION ___________________________________________________
-2022-01-07 12:45:44,205 INFO index MainThread : file error-reports exists
-2022-01-07 12:45:44,211 INFO index MainThread : connected to database
-2022-01-07 12:45:44,211 INFO index MainThread : PostgreSQL server details
-2022-01-07 12:45:44,211 INFO index MainThread : {'user': 'test', 'channel_binding': 'prefer', 'dbname': 'testdb', 'host': '127.0.0.1', 'port': '5432', 'options': '', 'sslmode': 'prefer', 'sslcompression': '0', 'sslsni': '1', 'ssl_min_protocol_version': 'TLSv1.2', 'gssencmode': 'prefer', 'krbsrvname': 'postgres', 'target_session_attrs': 'any'}
-
-2022-01-07 12:45:44,214 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2022-01-07 12:45:51,354 INFO index Thread-1 : table exists - channels
-2022-01-07 12:45:51,356 DEBUG urllib3.connectionpool Thread-1 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 12:45:51,803 DEBUG urllib3.connectionpool Thread-1 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 12:45:51,808 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 12:45:51] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 12:45:53,480 INFO index Thread-2 : table exists - channels
-2022-01-07 12:45:53,481 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.odysee.com:443
-2022-01-07 12:45:53,667 DEBUG urllib3.connectionpool Thread-2 : https://api.odysee.com:443 "GET /yt/resolve?channel_ids=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 None
-2022-01-07 12:45:53,672 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 12:45:53] "GET /api/get-lbry-channel?url=UCQ6fPy9wr7qnMxAbFOGBaLw HTTP/1.1" 200 -
-2022-01-07 12:46:18,316 INFO index Thread-3 : table exists - channels
-2022-01-07 12:46:18,316 INFO index Thread-3 : entry exists
-2022-01-07 12:46:18,317 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 12:46:18] "GET /api/get-lbry-channel?url=UC7YOGHUfC1Tb6E4pudI9STA HTTP/1.1" 200 -
+2022-01-07 13:41:25,429 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2022-01-07 13:41:26,835 INFO werkzeug Thread-1 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "GET /api/ HTTP/1.1" 200 -
+2022-01-07 13:41:26,891 INFO werkzeug Thread-2 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/tabs.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,893 INFO werkzeug Thread-3 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/jquery.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,894 INFO werkzeug Thread-4 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/dynsections.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,896 INFO werkzeug Thread-5 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/search.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,897 INFO werkzeug Thread-6 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/searchdata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,898 INFO werkzeug Thread-7 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/search.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,901 INFO werkzeug Thread-8 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/doxygen.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,902 INFO werkzeug Thread-9 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/menudata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,903 INFO werkzeug Thread-10 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/menu.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,935 INFO werkzeug Thread-11 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/doxygen.png HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,967 INFO werkzeug Thread-12 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/dynsections.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,973 INFO werkzeug Thread-13 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/search.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,974 INFO werkzeug Thread-14 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/searchdata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,980 INFO werkzeug Thread-15 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/search/search.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,986 INFO werkzeug Thread-16 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/doxygen.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:26,998 INFO werkzeug Thread-17 : 127.0.0.1 - - [07/Jan/2022 13:41:26] "[33mGET /api/menudata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:27,008 INFO werkzeug Thread-18 : 127.0.0.1 - - [07/Jan/2022 13:41:27] "[33mGET /api/menu.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:27,015 INFO werkzeug Thread-19 : 127.0.0.1 - - [07/Jan/2022 13:41:27] "[33mGET /api/doxygen.png HTTP/1.1[0m" 404 -
+2022-01-07 13:41:27,036 INFO werkzeug Thread-20 : 127.0.0.1 - - [07/Jan/2022 13:41:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,301 INFO werkzeug Thread-21 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "GET /api/ HTTP/1.1" 200 -
+2022-01-07 13:41:30,368 INFO werkzeug Thread-22 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/tabs.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,369 INFO werkzeug Thread-23 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/jquery.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,371 INFO werkzeug Thread-24 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/dynsections.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,372 INFO werkzeug Thread-25 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/search.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,373 INFO werkzeug Thread-26 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/searchdata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,375 INFO werkzeug Thread-27 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/search.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,375 INFO werkzeug Thread-28 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/doxygen.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,376 INFO werkzeug Thread-29 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menudata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,378 INFO werkzeug Thread-30 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menu.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,396 INFO werkzeug Thread-31 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/doxygen.png HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,432 INFO werkzeug Thread-32 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/dynsections.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,439 INFO werkzeug Thread-33 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/search.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,440 INFO werkzeug Thread-34 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/searchdata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,447 INFO werkzeug Thread-35 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/search/search.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,452 INFO werkzeug Thread-36 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/doxygen.css HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,462 INFO werkzeug Thread-37 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menudata.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,474 INFO werkzeug Thread-38 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/menu.js HTTP/1.1[0m" 404 -
+2022-01-07 13:41:30,480 INFO werkzeug Thread-39 : 127.0.0.1 - - [07/Jan/2022 13:41:30] "[33mGET /api/doxygen.png HTTP/1.1[0m" 404 -
