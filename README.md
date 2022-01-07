@@ -22,6 +22,10 @@ Install dependencies:
 
 ```pipenv install```
 
+Fetch submodules:
+
+```git submodules update && cd docs/wol-docs && git pull```
+
 Configure api settings in /src/apimod/apcnf.py
 
 Run the API:
