@@ -9,44 +9,97 @@ import requests
 import youtube_dl
 from datetime import datetime, timezone
 import logging
+##
+# @mainpage index.py, The home of our API
+#
+# @section description_main Description and Copyright notice.
+# 
+# This file is the main application that runs the wol-api. In this application we declare
+# all the possible API calls that can be made with this api while it is active. 
+#
+# Copyright (c) 2021, 2022 Tibroness. Under the GNU General public license 2.0.
+# 
+# This file is part of wol-api.
+#
+# This file is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software Foundation,
+# ether version 2 of the License, or (at your option) any later version.
+#
+# This program is distrobuted in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+# PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have recieved a copy of the GNU General Public License along with this 
+# program. If not, see <https://www.gnu.org/licenses/>.
+#
+# @section notes_main Notes
+# - This application is still bery early in its production, please handle the product at your own risk
+#
 
-"""@package index.py
-This 
+##
+# @file index.py
+#
+# @brief The main file where the API functions are declared.
+#
+# @section description_index 
+# This file is the main application that runs the wol-api. In this application we declare
+# all the possible API calls that can be made with this api while it is active. 
+#
+# @section libraries_index Libraries/Modules
+# - Flask 
+# - os
+# - apcnf.py
+# - psycopg2
+# - psycopg2.extras
+# - json 
+# - collections
+# - requests
+# - youtube_dl
+# - datetime
+# - logging
+#
+# @section todo_index ToDo
+# - Change the API landing page (/api/)
+#
+# @section author_index Author(s)
+# - Created by Tibroness (https://github.com/devbrones) as per request by Madiator (https://github.com/kodxana)
+# - Modified by Tibroness (https://github.com/devbrones)
 
+from flask import Flask, jsonify, request
+import os
+from apcnf import *
+import psycopg2
+import psycopg2.extras
+import json
+import collections
+import requests
+import youtube_dl
+from datetime import datetime, timezone
+import logging
 
-
-"""
-
-
-
-# jumbo
 app = Flask(__name__)
 
-# set up logging
+debug = 0
+# Set up logging
 
 logging.basicConfig(filename='apilog.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 app.logger.info("NEW SESSION ___________________________________________________")
 
 
 # check if the error report file exists and create it otherwise
-if os.path.isfile("./error-reports"):
+if os.path.isfile("error-reports"):
     app.logger.info("file error-reports exists")
 else:
     app.logger.info("file error-reports does not exist, creating")
-    os.mknod('./error-reports')
-
-#debug
-
-app.logger.info(Config().postgun)
-
-#/debug
+    os.mknod('error-reports')
 
 # connect to the database
 con = psycopg2.connect(user=Config().postgun,
                        password=Config().postgpw,
-                       host="127.0.0.1",
-                       port="5432",
+                       host=Config().postghost,
+                       port=Config().postgport,
                        database=Config().postdbname)
+app.logger.info("connected to database")
 # create a cursor
 cursor = con.cursor()
 # print details of pgsql into log
@@ -57,34 +110,28 @@ app.logger.info(str(str(con.get_dsn_parameters()) + "\n"))
 
 @app.route("/api/")
 def ret_ok():
-    """Returns the Documentation webpage.
+    """! Returns the Documentation webpage.
 
     This function literally does nothing but that.
 
-    Args:
-        None
-    Returns:
-        The API documentation in HTML.
+    @param None None
+    @return     The API documentation in HTML.
     Raises:
         200 OK
-
     """
     
     return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.1+c35 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
-    """Returns a JSON online object.
+    """! Returns a JSON online object.
 
     This feature is obsolete but I kept it anyways.
 
-    Args:
-        None
-    Returns:
-        [{"online":true}]
+    @param None None
+    @return     [{"online":true}]
     Raises:
         200 OK
-
     """
     
     online = {"online":True}
@@ -92,17 +139,14 @@ def isonline():
 
 @app.route("/api/report-error", methods=['POST'])
 def error_report():
-    """Report an error by sending a POST request to /api/report-error
-    
+    """! Report an error by sending a POST request to /api/report-error
+        
     Error reporting function.
     TODO: This code needs to be adapted to work better with a database rather than JSON
     
-    Args:
-        error-report-type: Can be "exception", "bug", or even "abcdefg"
-        error-report-value: The error message to be passed to the log, i.e. "Extension did not load."
-    
-    Returns:
-        204 None
+    @param error-report-type    Can be "exception", "bug", or even "abcdefg"
+    @param error-report-value   The error message to be passed to the log, i.e. "Extension did not load."
+    @return 204
     
     Raises:
         Error in "error-reports" file.
@@ -125,16 +169,13 @@ def error_report():
 
 @app.route("/api/get-lbry-channel", methods=['GET'])
 def getlch():
-    """Get information about a YouTube Channel.
+    """! Get information about a YouTube Channel.
     
     This function gets information on from odysee's API and saves that data to a database, and eventually returns a JSON Object.
     If an entry for the URL exists then it reads from that database entry.
 
-    Args:
-        ?url= : The YouTube URL
-    
-    Returns:
-        A JSON dictionary like this one:
+    @param url  The YouTube URL
+    @return A JSON dictionary like this one:
     
     Raises:
         Entry in log. 
@@ -142,7 +183,7 @@ def getlch():
     
     Examples:
         curl http://localhost:5000/api/get-lbry-channel?url=CHANNELID
-        Returns: 
+        Returns: {"dtstamp": TIME_WAS_ADDED,"id":ID,"lbrych":LBRY_CHANNEL_URL,"ytch":null,"yturl":CHANNELID} 
         
             
 
@@ -219,17 +260,13 @@ def getlch():
 
 @app.route("/api/get-lbry-video", methods=['GET'])
 def getlurl():
-    """Get information about a YouTube Video.
+    """! Get information about a YouTube Video.
     
     This function gets information on from odysee's API and saves that data to a database, and eventually returns a JSON Object.
     If an entry for the URL exists then it reads from that database entry.
 
-    Args:
-        ?url= : The YouTube URL
-    
-    Returns:
-        A JSON dictionary like this one:
-            "{"dtstamp":"2022-01-04 23:26:09.752372+00:00","id":2,"lbrych":"@AlphaNerd#8d497e7e96c789364c56aea7a35827d2dc1eea65","lbryurl":"@AlphaNerd#8/how-monero-works-and-why-its-a-better#a","yttitle":"How Monero Works (And Why its a Better Currency Than BTC)","yturl":"QrHsFZBab4U"}"
+    @param url  The YouTube URL
+    @return A JSON dictionary like this one: "{"dtstamp":"2022-01-04 23:26:09.752372+00:00","id":2,"lbrych":"@AlphaNerd#8d497e7e96c789364c56aea7a35827d2dc1eea65","lbryurl":"@AlphaNerd#8/how-monero-works-and-why-its-a-better#a","yttitle":"How Monero Works (And Why its a Better Currency Than BTC)","yturl":"QrHsFZBab4U"}"
     
     Raises:
         Entry in log. 
@@ -238,7 +275,6 @@ def getlurl():
     Examples:
         curl http://localhost:5000/api/get-lbry-video?url=QrHsFZBab4U
         Returns: 
-        
         {
             "dtstamp":"2022-01-04 23:26:09.752372+00:00",
             "id":2,
@@ -246,8 +282,6 @@ def getlurl():
             "yttitle":"How Monero Works (And Why its a Better Currency Than BTC)",
             "yturl":"QrHsFZBab4U"
         }
-            
-
     """
     
     # database management goes here, it will read the db for (request.args.get('url'))
