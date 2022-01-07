@@ -22,9 +22,17 @@ Install dependencies:
 
 ```pipenv install```
 
+Configure api settings in /src/apimod/apcnf.py
+
 Run the API:
 
 ```pipenv run python src/apimod/index.py```
 
-See /docs/html/index.html for more info.
+See docs for more info.
+
+**Common issues:**
+P: Infinite loading after running the command.
+
+F: 
+- Make sure you have configured /src/apimod/apcnf.py properly.
 
