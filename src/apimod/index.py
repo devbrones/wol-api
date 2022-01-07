@@ -10,6 +10,15 @@ import youtube_dl
 from datetime import datetime, timezone
 import logging
 
+"""@package index.py
+This 
+
+
+
+"""
+
+
+
 # jumbo
 app = Flask(__name__)
 
@@ -48,8 +57,7 @@ app.logger.info(str(str(con.get_dsn_parameters()) + "\n"))
 
 @app.route("/api/")
 def ret_ok():
-    """
-    Returns the Documentation webpage.
+    """Returns the Documentation webpage.
 
     This function literally does nothing but that.
 
@@ -61,12 +69,12 @@ def ret_ok():
         200 OK
 
     """
+    
     return "ok!200!\n<h1>The API is active</h1>\n<p>Watch-on-LBRY API Version 1.1+c35 by Devbrones https://tibroness.org</p>"
 
 @app.route("/api/is-online")
 def isonline():
-    """
-    Returns a JSON online object.
+    """Returns a JSON online object.
 
     This feature is obsolete but I kept it anyways.
 
@@ -78,13 +86,13 @@ def isonline():
         200 OK
 
     """
+    
     online = {"online":True}
     return jsonify(online)
 
 @app.route("/api/report-error", methods=['POST'])
 def error_report():
-    """ 
-    Report an error by sending a POST request to /api/report-error
+    """Report an error by sending a POST request to /api/report-error
     
     Error reporting function.
     TODO: This code needs to be adapted to work better with a database rather than JSON
@@ -104,6 +112,7 @@ def error_report():
         
         Writes an error in the above seen JSON format into the "error-reports" file.
     """
+    
     dat = request.get_json()
 
     if "error-report-value" in dat:
@@ -116,8 +125,7 @@ def error_report():
 
 @app.route("/api/get-lbry-channel", methods=['GET'])
 def getlch():
-    """ 
-    Get information about a YouTube Channel.
+    """Get information about a YouTube Channel.
     
     This function gets information on from odysee's API and saves that data to a database, and eventually returns a JSON Object.
     If an entry for the URL exists then it reads from that database entry.
@@ -211,8 +219,7 @@ def getlch():
 
 @app.route("/api/get-lbry-video", methods=['GET'])
 def getlurl():
-    """ 
-    Get information about a YouTube Video.
+    """Get information about a YouTube Video.
     
     This function gets information on from odysee's API and saves that data to a database, and eventually returns a JSON Object.
     If an entry for the URL exists then it reads from that database entry.
@@ -242,6 +249,7 @@ def getlurl():
             
 
     """
+    
     # database management goes here, it will read the db for (request.args.get('url'))
     # and if it is found it returns url, otherwise it would be wise to query the LBRY
     # API and get the new url and store to db
