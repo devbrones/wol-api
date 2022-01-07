@@ -2,13 +2,13 @@
 ## Watch-on-LBRY API proxy that saves data from LBRY to a database
 
 
-*Requirements:*
+**Requirements:**
 - pipenv
 - flask (pipenv install flask)
 - postgresql
 - libpq-dev
 
-*Installation instructions:*
+**Installation instructions:**
 
 Clone the repository from Github: 
 
@@ -26,8 +26,5 @@ Run the API:
 
 ```pipenv run python src/apimod/index.py```
 
-
-
-##Usage:
-
+See /docs/html/index.html for more info.
 
