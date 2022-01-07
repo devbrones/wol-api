@@ -1,8 +1,23 @@
 # WOL-API
-## Watch-on-LBRY API proxy thingy to save data to database
+## Watch-on-LBRY API proxy that saves data from LBRY to a database
 
 
-requirements: pipenv, flask (pipenv install flask), postgresql, libpq-dev, ~*psycopg2-binary*~ <- trunc.
+###Requirements:
+pipenv\
+flask (pipenv install flask)\
+postgresql\
+libpq-dev\
 
-tempfix: ```pipenv run pip install psycopg2```
+###Installation instructions:
+Clone the repository from Github: \ 
+```git clone https://github.com/devbrones/wol-api```
+Change working directory to the recently cloned folder: \ 
+```cd wol-api```
+Install dependencies: \ 
+```pipenv install```
+Run the API: \ 
+```pipenv run python src/apimod/index.py```
+
+###Usage:
+
 
