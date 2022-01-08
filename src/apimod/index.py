@@ -65,7 +65,7 @@ import logging
 # - Created by Tibroness (https://github.com/devbrones) as per request by Madiator (https://github.com/kodxana)
 # - Modified by Tibroness (https://github.com/devbrones)
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory, render_template
 import os
 from apcnf import *
 import psycopg2
@@ -432,9 +432,11 @@ def getdbcount():
     else:
         countc = 0
 
-    return_object = {'video_count':countv, 'channel_count':countc}
-    
-    return jsonify(return_object)
+    if request.args.get('type') == "json": 
+        return_object = {'video_count':countv, 'channel_count':countc}
+        return jsonify(return_object)
+    else:
+        return render_template("status.html", vnum=countv, cnum=countc)
 
 @app.route("/api/submit-video", methods=['POST'])
 def submv():
