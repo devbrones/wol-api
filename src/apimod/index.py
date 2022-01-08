@@ -228,7 +228,7 @@ def getlch():
                     return jsonify(return_object) 
                 else:
                     print("there is no lbry url")
-                    abort(404)        
+                    return jsonify(return_object), 404        
 
             except psycopg2.DatabaseError as error:
                 app.logger.warning("last call could not be completed, cleaning up. %s",(error,))
@@ -368,7 +368,7 @@ def getlurl():
                 else:
                     
                 #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
-                    abort(404)    
+                    return jsonify(return_object), 404
 
             except psycopg2.DatabaseError as error:
                 app.logger.warning("last call could not be completed, cleaning up. %s",(error,))
