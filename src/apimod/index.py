@@ -397,5 +397,52 @@ def getlurl():
 
         return "internal server error"
 
+@app.route("/api/db-count/", methods=['GET'])
+def getdbcount():
+    """! Get data amount.
+    
+    This function gets information on from our database, and returns a JSON Object with the number of indexed videos and channels.
+    If no entries are found it returns 0.
+
+    @param None None
+    @return A JSON dictionary like this one: "{"channel_count":1,"video_count":2}"
+    
+    Examples:
+        curl http://localhost:5000/api/db-count
+        Returns: {"channel_count":1,"video_count":2}
+    """
+    
+    cursor.execute("select exists(select * from information_schema.tables where table_name='dataof_all')")
+
+    if bool(cursor.fetchone()[0]):
+        app.logger.info("table dataof_all found")
+        # this is a very slow method i know but estimates are sus
+        cursor.execute("SELECT count(*) AS exact_count FROM dataof_all")
+        countv = cursor.fetchone()[0]
+    else:
+        countv = 0
+    
+    cursor.execute("select exists(select * from information_schema.tables where table_name='dataof_channels')")
+
+    if bool(cursor.fetchone()[0]):
+        app.logger.info("table dataof_channels found")
+        # this is a very slow method i know but estimates are sus
+        cursor.execute("SELECT count(*) AS exact_count FROM dataof_channels")
+        countc = cursor.fetchone()[0]
+    else:
+        countc = 0
+
+    return_object = {'video_count':countv, 'channel_count':countc}
+    
+    return jsonify(return_object)
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     app.run()
