@@ -1,14 +1,3 @@
-from flask import Flask, jsonify, request
-import os
-from apcnf import *
-import psycopg2
-import psycopg2.extras
-import json
-import collections
-import requests
-import youtube_dl
-from datetime import datetime, timezone
-import logging
 ##
 # @mainpage index.py, The home of our API
 #
@@ -65,7 +54,7 @@ import logging
 # - Created by Tibroness (https://github.com/devbrones) as per request by Madiator (https://github.com/kodxana)
 # - Modified by Tibroness (https://github.com/devbrones)
 
-from flask import Flask, jsonify, request, send_from_directory, render_template
+from flask import Flask, jsonify, request, send_from_directory, render_template, abort
 import os
 from apcnf import *
 import psycopg2
@@ -239,8 +228,7 @@ def getlch():
                     return jsonify(return_object) 
                 else:
                     print("there is no lbry url")
-                    print(return_object)
-                    return jsonify(return_object)    
+                    abort(404)        
 
             except psycopg2.DatabaseError as error:
                 app.logger.warning("last call could not be completed, cleaning up. %s",(error,))
@@ -380,7 +368,7 @@ def getlurl():
                 else:
                     
                 #cursor.execute("insert into dataof_all(id, yturl, yttitle, lbryurl, lbrytitle, dtstamp) values (%s,%s,%s,%s,%s,%s);"())
-                    return jsonify(return_object)    
+                    abort(404)    
 
             except psycopg2.DatabaseError as error:
                 app.logger.warning("last call could not be completed, cleaning up. %s",(error,))
