@@ -401,14 +401,14 @@ def getlurl():
 def getdbcount():
     """! Get data amount.
     
-    This function gets information on from our database, and returns a JSON Object with the number of indexed videos and channels.
+    This function gets information on from our database, and returns either a webpage with the data or if specified, a JSON Object with the number of indexed videos and channels.
     If no entries are found it returns 0.
 
-    @param None None
-    @return A JSON dictionary like this one: "{"channel_count":1,"video_count":2}"
+    @param type Specify format, if this is blank it will return in HTML format, if this key has the value "json" a json string will be returned.
+    @return Webpage or a JSON dictionary like this one: "{"channel_count":1,"video_count":2}"
     
     Examples:
-        curl http://localhost:5000/api/db-count
+        curl http://localhost:5000/api/db-count?type=json
         Returns: {"channel_count":1,"video_count":2}
     """
     
