@@ -46,6 +46,7 @@
 # - youtube_dl
 # - datetime
 # - logging
+# - re
 #
 # @section todo_index ToDo
 # - Change the API landing page (/api/)
@@ -65,6 +66,8 @@ import requests
 import youtube_dl
 from datetime import datetime, timezone
 import logging
+import re
+
 
 app = Flask(__name__)
 
@@ -294,7 +297,11 @@ def getlurl():
     # check if the search request exists in the database and if so return a jsonified structure
     # of the data.
     # else create the entry and scan lbrys api and add to resp cols.
+    
+    if not re.match("^([A-z0-9_-]{11})$", request.args.get('url')):
+        return jsonify({"error":"invalid url passed"}), 404
 
+    
     cursor.execute("select exists(select * from information_schema.tables where table_name='dataof_all')")
 
     if bool(cursor.fetchone()[0]):
@@ -335,12 +342,16 @@ def getlurl():
                 # the other values will be fetched using some movie magic i guess!
                 
                 # yt title begin
-                ydl_opts = {
-                }
-                video = "https://youtube.com/watch?v=" + urla
-                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                    info_dict = ydl.extract_info(video, download=False)
-                    yttitle = info_dict.get('title', None)
+                try:
+                    ydl_opts = {
+                    }
+                    video = "https://youtube.com/watch?v=" + urla
+                    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                        info_dict = ydl.extract_info(video, download=False)
+                        yttitle = info_dict.get('title', None)
+                except youtube_dl.utils.DownloadError as e:
+                    return jsonify({"error":str(e),"error_hr":"No such video was found!"}), 404
+
                 # yt title end
 
                 # lbry url begin
