@@ -125,15 +125,17 @@ def ison():
     else:
         return("invalid api version")
 
-@app.route("/api/report-error", methods=['POST'])
+@app.route("/api/report-error", methods=['GET'])
 def error_report():
     version = request.args.get('v')
+    t = request.args.get("errtype")
+    v = request.args.get("errvalue")
     if version == "1":
         print("version 1 requested")
-        return error_report_v1(request.get_json())
+        return error_report_v1(request.method, t, v)
     elif version == "2":
         print("version 2 requested")
-        return error_report_v2(request.get_json())
+        return error_report_v2(request.method, t, v)
 
 @app.route("/api/get-lbry-channel", methods=['GET'])
 def getc():
