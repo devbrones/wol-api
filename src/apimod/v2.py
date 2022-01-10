@@ -52,7 +52,7 @@ def error_report_v2(method, t, v):
         
         Writes an error in the above seen JSON format into the "error-reports" table.
     """#re.match("^([A-z0-9_-])$", t) and re.match("^([A-z0-9_-])$", v)
-    if t:
+    if re.match("([A-z0-9_-])", t) and re.match("([A-z0-9_-])", v):
         print("t is pass")
         print(t, v)
         if method == 'GET':
@@ -71,7 +71,7 @@ def error_report_v2(method, t, v):
                         # if there is a lbry url
                         cursor.execute("insert into errorreports(errorreporttype, value, dtstamp) values (%s,%s,%s);",(ert,erv,dt,))
                         con.commit()
-                        return '', 204   
+                        return 'Thank you for submitting', 200   
                     else:
                         return '', 400
                 else:
@@ -364,7 +364,7 @@ def getdbcount_v2(type):
     else:
         return render_template("status.html", vnum=countv, cnum=countc)
 
-def submv_v2(method, r):
+def submv_v2(method, form):
     """! Submit a request.
     
     This function lets a user submit a request to our server containing a youtube video url and a lbry url.
@@ -392,9 +392,8 @@ def submv_v2(method, r):
             if bool(cursor.fetchone()[0]):
                 app.logger.info("table submissions found")
                 #r = request.get_json()
-                lbryurl = r['lbryurl']
-                yturl = r['yturl']
-
+                yturl = form['yturl']
+                lbryurl = form['lbryurl']
                 if bool(lbryurl):
                     # if there is a lbry url
                     cursor.execute("insert into submissions(yturl, lbryurl, dtstamp) values (%s,%s,%s);",(yturl,lbryurl,dt,))

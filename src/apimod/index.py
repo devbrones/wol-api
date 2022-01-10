@@ -56,6 +56,8 @@
 # - Modified by Tibroness (https://github.com/devbrones)
 
 from flask import Flask, jsonify, request, send_from_directory, render_template, abort
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 import os
 from apcnf import *
 import psycopg2
@@ -71,6 +73,12 @@ from v1 import *
 from v2 import *
 
 app = Flask(__name__)
+
+limiter = Limiter(
+            app,
+            key_func=get_remote_address,
+            default_limits=["200 per day", "50 per hour"]
+        )
 
 debug = 0
 # Set up logging
@@ -126,6 +134,7 @@ def ison():
         return("invalid api version")
 
 @app.route("/api/report-error", methods=['GET'])
+@limiter.limit("5 per hour")
 def error_report():
     version = request.args.get('v')
     t = request.args.get("errtype")
@@ -169,12 +178,13 @@ def getdb():
 
 
 @app.route("/api/submit-video", methods=['GET', 'POST'])
+@limiter.limit("5 per hour")
 def submit():
     version = request.args.get('v')
     if version == "1":
         return submv_v1(request.method, request.get_json())
     elif version == "2":
-        return submv_v2(request.method, request.get_json())
+        return submv_v2(request.method, request.form)
     else:
         return submv_v1(request.method, request.get_json())
 

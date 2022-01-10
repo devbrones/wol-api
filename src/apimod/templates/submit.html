@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://fontlibrary.org//face/courier-prime" type="text/css" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 500px;
+        padding-top: 100px;
+      }
+      h2 {
+        color: #404040;
+        font-size: 48px;
+        padding: 10px;
+      }
+      .column {
+        float: left;
+        width: 50%
+      }
+      .box {
+        align: center;
+        width: 50%;
+      }
+      .p {
+        font-size: 12px;
+      }
+      #footer {
+        position: absolute;
+        bottom: 0;
+        align: center;
+        width: 100%;
+        font-family: 'CourierPrimeRegular';
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        font-family: 'CourierPrimeRegular';
+        font-weight: normal;
+        font-style: normal;
+      }
+      h1 {
+        font-family: 'CourierPrimeRegular';
+        font-weight: bold;
+        font-style: normal;
+      }
+    </style>
+      <title>Statistics</title>
+    </head>
+
+    <body>
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">wol-api</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="/api/">Docs</a></li>
+            <li><a href="/api/submit-video">Submit Video</a></li>
+            <li><a href="https://github.com/devbrones/wol-api">Github</a></li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    </body>
+      <div class="row" align=center>
+        <h1>wol-api stats</h1>
+        <div class="box">
+          <div class="column">
+		  <p>Contribute:</p>
+		  <form action="/api/submit-video?v=2" method="post">
+			  <label for="yturl">Youtube URL:</label><br>
+			  <input type="text" id="yturl" name="yturl" placeholder="yturl"><br>
+			  <label for="lbryurl">LBRY URL:</label><br>
+			  <input type="text" id="lbryurl" name="lbryurl" placeholder="lbryurl"><br>
+			  <input type="submit" value="Submit">
+		  </form>	
+	  </div>
+          <div class="column"><p>Thank you for helping our service grow!</p><h2><b>{{cnum}}</b></h2></div>
+        </div>
+      </div>
+    <footer id="footer" color=white>
+      <hr>
+      <p align=center>Copyright (c) 2022, Devbrones</p>
+    </footer>
