@@ -143,8 +143,7 @@ def getc():
     elif version == "2":
         return getlch_v2(str(request.args.get('url')))
     else:
-        return getlch_v2(str(request.args.get('url')))
-
+        return getlch_v1(str(request.args.get('url')))
 
 @app.route("/api/get-lbry-video", methods=['GET'])
 def getv():
@@ -154,7 +153,7 @@ def getv():
     elif version == "2":
         return getlurl_v2(str(request.args.get('url')))
     else:
-        return getlurl_v2(str(request.args.get('url')))
+        return getlurl_v1(str(request.args.get('url')))
 
 @app.route("/api/db-count/", methods=['GET'])
 def getdb():
@@ -164,7 +163,7 @@ def getdb():
     elif version == "2":
         return getdbcount_v2(request.args.get('type'))
     else:
-        return getdbcount_v2(request.args.get('type'))
+        return getdbcount_v1(request.args.get('type'))
 
 
 @app.route("/api/submit-video", methods=['GET', 'POST'])
@@ -175,7 +174,7 @@ def submit():
     elif version == "2":
         return submv_v2(request.method, request.get_json())
     else:
-        return submv_v2(request.method, request.get_json())
+        return submv_v1(request.method, request.get_json())
 
 if __name__ == "__main__":
     app.run()
