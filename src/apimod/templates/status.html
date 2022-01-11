@@ -45,7 +45,7 @@
         font-style: normal;
       }
     </style>
-      <title>Submit video</title>
+      <title>Statistics</title>
     </head>
 
     <body>
@@ -57,7 +57,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/api/">Docs</a></li>
-            <li><a href="/api/db-count">Stats</a></li>
+            <li><a href="/api/submit-video">Submit Video</a></li>
             <li><a href="https://github.com/devbrones/wol-api">Github</a></li>
           </ul>
         </div>
@@ -65,22 +65,13 @@
       </nav>
     </body>
       <div class="row" align=center>
-        <h1>wol-api contribute</h1>
+        <h1>wol-api stats</h1>
         <div class="box">
-          <div class="column">
-		  <p>Contribute:</p>
-		  <form action="/api/submit-video?v=2" method="post">
-			  <label for="yturl">Youtube URL:</label><br>
-			  <input type="text" id="yturl" name="yturl" placeholder="yturl"><br>
-			  <label for="lbryurl">LBRY URL:</label><br>
-			  <input type="text" id="lbryurl" name="lbryurl" placeholder="lbryurl"><br>
-			  <input type="submit" value="Submit">
-		  </form>	
-	  </div>
-	  <div class="column"><p><b>Thank you for helping our service grow!</b></p></div>
+          <div class="column"><p>Number of scraped videos:</p><h2><b>{{vnum}}</b></h2></div>
+          <div class="column"><p>Number of scraped channels:</p><h2><b>{{cnum}}</b></h2></div>
         </div>
       </div>
     <footer id="footer" color=white>
       <hr>
-      <p align=center>Copyright (c) 2022, <a href="https://github.com/devbrones/">Devbrones</p>
+      <p align=center>Copyright (c) 2022, Devbrones</p>
     </footer>

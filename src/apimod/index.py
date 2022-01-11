@@ -178,7 +178,7 @@ def getdb():
 
 
 @app.route("/api/submit-video", methods=['GET', 'POST'])
-@limiter.limit("5 per hour")
+@limiter.limit("5 per hour", methods=['POST'])
 def submit():
     version = request.args.get('v')
     if version == "1":
