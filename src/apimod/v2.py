@@ -394,6 +394,8 @@ def submv_v2(method, form):
                 #r = request.get_json()
                 yturl = form['yturl']
                 lbryurl = form['lbryurl']
+                # this is where we need to link chencking to remove https://www.youtube.com/watch... &c
+
                 if bool(lbryurl):
                     # if there is a lbry url
                     cursor.execute("insert into submissions(yturl, lbryurl, dtstamp) values (%s,%s,%s);",(yturl,lbryurl,dt,))
