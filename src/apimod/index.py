@@ -176,6 +176,16 @@ def getdb():
     else:
         return getdbcount_v1(request.args.get('type'))
 
+@app.route("/api/demo/", methods=['GET'])
+def demo():
+    version = request.args.get('v')
+    if version == "1":
+        return demo_v1()
+    elif version == "2":
+        return demo_v2()
+    else:
+        return demo_v1()
+
 
 @app.route("/api/submit-video", methods=['GET', 'POST'])
 @limiter.limit("5 per hour", methods=['POST'])

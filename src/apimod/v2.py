@@ -364,6 +364,9 @@ def getdbcount_v2(type):
     else:
         return render_template("status.html", vnum=countv, cnum=countc)
 
+def demo_v2():
+    return render_template("demo.html")
+
 def submv_v2(method, form):
     """! Submit a request.
     

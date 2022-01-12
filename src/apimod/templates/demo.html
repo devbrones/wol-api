@@ -45,7 +45,26 @@
         font-style: normal;
       }
     </style>
-      <title>Statistics</title>
+    <script>
+    	function getc(ur) {
+		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + ur
+		new xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
+				document.getElementById('result1').innerHTML = JSON.parse(xmlHttp.responseText).total;
+			    }
+
+		    }
+	function getv(ur) {
+		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + ur;
+		new xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
+				document.getElementById('result2').innerHTML = JSON.parse(xmlHttp.responseText).total;
+			    }
+		    }
+    </script>
+      <title>Api Demo</title>
     </head>
 
     <body>
@@ -57,8 +76,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/api/">Docs</a></li>
+            <li><a href="/api/db-count">Stats</a></li>
             <li><a href="/api/submit-video">Submit Video</a></li>
-            <li><a href="/api/demo">Demo</a></li>
             <li><a href="https://github.com/devbrones/wol-api">Github</a></li>
           </ul>
         </div>
@@ -66,13 +85,29 @@
       </nav>
     </body>
       <div class="row" align=center>
-        <h1>wol-api stats</h1>
+        <h1>wol-api demo</h1>
         <div class="box">
-          <div class="column"><p>Number of scraped videos:</p><h2><b>{{vnum}}</b></h2></div>
-          <div class="column"><p>Number of scraped channels:</p><h2><b>{{cnum}}</b></h2></div>
+          <div class="column">
+		  <p>Channel Demo:</p>
+		  <form>
+			  <label for="url">Youtube URL:</label><br>
+			  <input id="urlc" name="url" placeholder="yt-url"><br>
+			  <button onclick="getc(document.getElementById('urlc').value)">Get</button>
+		  </form>	
+		  <p id="result1"></p>
+	  </div>
+	  <div class="column">
+		  <p>Video Demo:</p>
+		  <form>
+			  <label for="url">Youtube URL:</label><br>
+			  <input id="urlv" name="url" placeholder="yt-url"><br>
+			  <button onclick="getv(document.getElementById('urlv').value)">Get</button>
+		  </form>
+		  <p id="result2"></p>
+	  </div>
         </div>
       </div>
     <footer id="footer" color=white>
       <hr>
-      <p align=center>Copyright (c) 2022, Devbrones</p>
+      <p align=center>Copyright (c) 2022, <a href="https://github.com/devbrones/">Devbrones</p>
     </footer>
