@@ -46,9 +46,10 @@
       }
     </style>
     <script>
+	var xmlHttp;
     	function getc(ur) {
 		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + ur
-		new xmlHttp = new XMLHttpRequest();
+		xmlHttp == new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function() {
 			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
 				document.getElementById('result1').innerHTML = JSON.parse(xmlHttp.responseText).total;
@@ -57,7 +58,7 @@
 		    }
 	function getv(ur) {
 		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + ur;
-		new xmlHttp = new XMLHttpRequest();
+		xmlHttp == new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function() {
 			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
 				document.getElementById('result2').innerHTML = JSON.parse(xmlHttp.responseText).total;
@@ -88,11 +89,37 @@
         <h1>wol-api demo</h1>
         <div class="box">
           <div class="column">
+    <script>
+    	function getc() {
+		console.log("getc called")
+		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + document.getElementById("urlc").value;
+		var xmlHttp = new XMLHttpRequest();
+		var xmlHttp.onreadystatechange = function() {
+				    if (xmlHttp.readystate == 4 & xmlHttp.status == 200){
+					console.log("success" + JSON.parse(xmlHttp.responseText.total))
+					document.getElementById('result1').innerHTML == JSON.parse(xmlHttp.responseText).total;
+						}
+				    console.log("if finished")
+			    }
+		console.log("orsc finished")
+
+		    }
+	function getv() {
+		console.log("getv called")
+		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + document.getElementById("urlv").value;
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.onreadystatechange = function() {
+				    if (xmlHttp.readystate == 4 & xmlHttp.status == 200){
+				document.getElementById('result2').innerHTML == JSON.parse(xmlHttp.responseText).total;
+						}
+			    }
+		    }
+    </script>
 		  <p>Channel Demo:</p>
 		  <form>
 			  <label for="url">Youtube URL:</label><br>
 			  <input id="urlc" name="url" placeholder="yt-url"><br>
-			  <button onclick="getc(document.getElementById('urlc').value)">Get</button>
+			  <button onclick="getc()">Get</button>
 		  </form>	
 		  <p id="result1"></p>
 	  </div>
@@ -101,7 +128,7 @@
 		  <form>
 			  <label for="url">Youtube URL:</label><br>
 			  <input id="urlv" name="url" placeholder="yt-url"><br>
-			  <button onclick="getv(document.getElementById('urlv').value)">Get</button>
+			  <button onclick="getv()">Get</button>
 		  </form>
 		  <p id="result2"></p>
 	  </div>
