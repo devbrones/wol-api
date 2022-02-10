@@ -46,22 +46,29 @@
       }
     </style>
     <script>
-	var xmlHttp;
-    	function getc(ur) {
-		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + ur
-		xmlHttp == new XMLHttpRequest();
-		xmlHttp.onreadystatechange = function() {
-			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
-				document.getElementById('result1').innerHTML = JSON.parse(xmlHttp.responseText).total;
+    	function getc() {
+		console.log("getc called")
+		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + document.getElementById("urlc").value;
+		var xmlhttp = new XMLHttpRequest();
+		var xmlhttp.onreadystatechange = function() {
+				    if (xmlhttp.readystate == 4 & xmlhttp.status == 200){
+					console.log("success" + JSON.parse(xmlhttp.responseText.total))
+					document.getElementById('result1').innerHTML == JSON.parse(xmlhttp.responseText).total;
+						}
+				    console.log("if finished")
 			    }
+		console.log("orsc finished")
 
 		    }
-	function getv(ur) {
-		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + ur;
-		xmlHttp == new XMLHttpRequest();
-		xmlHttp.onreadystatechange = function() {
-			if (xmlHttp.readystate == 4 & xmlHttp.status == 200)
-				document.getElementById('result2').innerHTML = JSON.parse(xmlHttp.responseText).total;
+	function getv() {
+		console.log("getv called")
+		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + document.getElementById("urlv").value;
+		console.log(url);
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+				    if (xmlhttp.readystate == 4 & xmlhttp.status == 200){
+				document.getElementById('result2').innerHTML == JSON.parse(xmlhttp.responseText).total;
+						}
 			    }
 		    }
     </script>
@@ -93,11 +100,11 @@
     	function getc() {
 		console.log("getc called")
 		var url = "https://scrap.madiator.com/api/get-lbry-channel?url=" + document.getElementById("urlc").value;
-		var xmlHttp = new XMLHttpRequest();
-		var xmlHttp.onreadystatechange = function() {
-				    if (xmlHttp.readystate == 4 & xmlHttp.status == 200){
-					console.log("success" + JSON.parse(xmlHttp.responseText.total))
-					document.getElementById('result1').innerHTML == JSON.parse(xmlHttp.responseText).total;
+		var xmlhttp = new XMLHttpRequest();
+		var xmlhttp.onreadystatechange = function() {
+				    if (xmlhttp.readystate == 4 & xmlhttp.status == 200){
+					console.log("success" + JSON.parse(xmlhttp.responseText.total))
+					document.getElementById('result1').innerHTML == JSON.parse(xmlhttp.responseText).total;
 						}
 				    console.log("if finished")
 			    }
@@ -107,10 +114,11 @@
 	function getv() {
 		console.log("getv called")
 		var url = "https://scrap.madiator.com/api/get-lbry-video?url=" + document.getElementById("urlv").value;
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.onreadystatechange = function() {
-				    if (xmlHttp.readystate == 4 & xmlHttp.status == 200){
-				document.getElementById('result2').innerHTML == JSON.parse(xmlHttp.responseText).total;
+		console.log(url);
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+				    if (xmlhttp.readystate == 4 & xmlhttp.status == 200){
+				document.getElementById('result2').innerHTML == JSON.parse(xmlhttp.responseText).total;
 						}
 			    }
 		    }

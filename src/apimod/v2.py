@@ -26,13 +26,12 @@ def isonline_v2():
     This feature is obsolete but I kept it anyways.
 
     @param None None
-    @return     [{"online":true}]
+    @return     200
     Raises:
         200 OK
     """
     
-    online = {"online":True}
-    return jsonify(online)
+    return '',200
 
 def error_report_v2(method, t, v):
     """! Report an error by sending a POST request to /api/report-error
