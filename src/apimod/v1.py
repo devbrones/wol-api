@@ -10,6 +10,11 @@ import youtube_dl
 from datetime import datetime, timezone
 import logging
 import re
+import requests
+
+# thanks https://gist.github.com/codsane/25f0fd100b565b3fce03d4bbd7e7bf33
+def commitCount(u, r):
+	return re.search('\d+$', requests.get('https://api.github.com/repos/{}/{}/commits?per_page=1'.format(u, r)).links['last']['url']).group()
 
 app = Flask(__name__)
 con = psycopg2.connect(user=Config().postgun,
@@ -333,7 +338,8 @@ def getdbcount_v1(type):
         return_object = {'video_count':countv, 'channel_count':countc}
         return jsonify(return_object)
     else:
-        return render_template("status.html", vnum=countv, cnum=countc)
+        vers = commitCount("devbrones","wol-api")
+        return render_template("status.html", vnum=countv, cnum=countc, ver=vers)
 
 def demo_v1():
     return render_template("demo.html")

@@ -77,7 +77,7 @@ from v2 import *
 # thanks https://gist.github.com/codsane/25f0fd100b565b3fce03d4bbd7e7bf33
 def commitCount(u, r):
 	return re.search('\d+$', requests.get('https://api.github.com/repos/{}/{}/commits?per_page=1'.format(u, r)).links['last']['url']).group()
-
+print(commitCount("devbrones", "wol-api"))
 app = Flask(__name__)
 
 limiter = Limiter(
