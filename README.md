@@ -1,6 +1,7 @@
 # WOL-API
 ## Watch-on-LBRY API proxy that saves data from LBRY to a database
 
+Current version: **1.1.81**
 
 **Requirements:**
 - pipenv
