@@ -361,10 +361,10 @@ def getdbcount_v2(type):
         return_object = {'video_count':countv, 'channel_count':countc}
         return jsonify(return_object)
     else:
-        return render_template("status.html", vnum=countv, cnum=countc)
+        return render_template("status.html", vnum=countv, cnum=countc, ver=commitCount("devbrones","wol-api"))
 
 def demo_v2():
-    return render_template("demo.html")
+    return render_template("demo.html", ver=commitCount("devbrones","wol-api"))
 
 def submv_v2(method, form):
     """! Submit a request.

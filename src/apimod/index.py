@@ -47,6 +47,7 @@
 # - datetime
 # - logging
 # - re
+# - requests
 #
 # @section todo_index ToDo
 # - Change the API landing page (/api/)
@@ -69,8 +70,13 @@ import youtube_dl
 from datetime import datetime, timezone
 import logging
 import re
+import requests
 from v1 import *
 from v2 import *
+
+# thanks https://gist.github.com/codsane/25f0fd100b565b3fce03d4bbd7e7bf33
+def commitCount(u, r):
+	return re.search('\d+$', requests.get('https://api.github.com/repos/{}/{}/commits?per_page=1'.format(u, r)).links['last']['url']).group()
 
 app = Flask(__name__)
 
