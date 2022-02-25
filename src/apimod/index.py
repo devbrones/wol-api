@@ -83,7 +83,7 @@ app = Flask(__name__)
 limiter = Limiter(
             app,
             key_func=get_remote_address,
-            default_limits=["200 per day", "50 per hour"]
+            default_limits=["200 per day", "80 per hour"]
         )
 
 debug = 0
@@ -153,6 +153,7 @@ def error_report():
         return error_report_v2(request.method, t, v)
 
 @app.route("/api/get-lbry-channel", methods=['GET'])
+@limiter.limit("500000000 per hour")
 def getc():
     version = request.args.get('v')
     if version == "1":
