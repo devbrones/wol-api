@@ -59,6 +59,7 @@
 from flask import Flask, jsonify, request, send_from_directory, render_template, abort
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from werkzeug.middleware.proxy_fix import ProxyFix
 import os
 from apcnf import *
 import psycopg2
@@ -79,6 +80,8 @@ def commitCount(u, r):
 	return re.search('\d+$', requests.get('https://api.github.com/repos/{}/{}/commits?per_page=1'.format(u, r)).links['last']['url']).group()
 print(commitCount("devbrones", "wol-api"))
 app = Flask(__name__)
+
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1)
 
 limiter = Limiter(
             app,
