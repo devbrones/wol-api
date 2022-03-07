@@ -153,8 +153,8 @@ def getlch_v2(urla):
                     ytch = info_dict.get('uploader_url', None)
                 """             
                 return_object = {
-                   'yt-url':urla,
-                   'lbry-chn':lbrych,
+                   'yturl':urla,
+                   'lbrychn':lbrych,
                    'dtstamp':dt
                    }
                 if bool(lbrych):
@@ -297,9 +297,9 @@ def getlurl_v2(urla):
 
 
                 return_object = {
-                   'yt-url':urla,
-                   'yt-title':yttitle,
-                   'lbry-url':lbryurl,
+                   'yturl':urla,
+                   'yttitle':yttitle,
+                   'lbryurl':lbryurl,
                    'dtstamp':dt
                    }
                 if bool(lbryurl):
